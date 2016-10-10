@@ -1,0 +1,15 @@
+{
+  "name": "aoffice_web_baidumapsearch",
+  "version": "0.0.1",
+  "description": "> aoffice_web_BaiduMapSearch",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "aoffice_web_BaiduMapSearch"
+  },
+  "author": "yanxiaodi yanxiaodi@forevercj.com",
+  "license": "MIT"
+}
