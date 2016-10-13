@@ -1,0 +1,151 @@
+/* CSS Document */
+
+*{margin:0;padding:0;-webkit-tap-highlight-color:rgba(0,0,0,0)}
+html,body{background:#f2f2f2;color:#808080;font-family:微软雅黑,Arial,sans-serif}
+h1,h2,h3,h4,h5,h6{font-size:100%; font-weight:normal;}
+ul,ol,li{list-style:none}
+img{border:0; vertical-align:middle;}
+table{border-collapse:collapse;border-spacing:0}
+a{color:#636363;text-decoration:none}
+.clear {display:block;width:100%;height:0;clear:both}
+.clearfix:after { clear:both; content:"."; display:block; visibility:hidden; height:0;} 
+input,textarea{ border:none; outline:none; background:#fff;font-family:微软雅黑,Arial,sans-serif}
+
+.wrap{ width:100%; height:100%;}
+.bg-fixed{ display:none; width:100%; height:100%; left:0; top:0; position:fixed; background:rgba(0,0,0,0.5); z-index:99;}
+.message{ display:none; position:fixed; left:50%; top:50%; margin-left:-100px; margin-top:-30px; width:200px; height:60px; line-height:60px; text-align:center; z-index:101; background:#fff; color:red; border-radius:10px;}
+.res-success{ transform:scale(0); position:fixed; left:50%; text-align:center; margin-left:-220px; top:50%; margin-top:-220px; width:440px; height:440px; border-radius:220px; border:2px #fff solid; z-index:101;}
+.res-success img{ margin-top:82px;}
+.ad01{ transition:all 0.5s ease-in-out;}
+.ad02{ transform:scale(1);}
+.reg-area a:hover{ text-decoration:underline;}
+.log-area a:hover{ text-decoration:underline;}
+.log-reset a:hover{ text-decoration:underline;}
+.reg-area{ display:none; width:300px; padding:60px 160px; height:auto; position:fixed; left:50%; margin-left:-310px; top:50%; z-index:100; background:#e5e5e5; border-radius:8px;}
+.reg-area h2{ font-size:20px; color:#808080; margin-bottom:20px;}
+.reg-area input[type="text"],.reg-area input[type="password"]{ width:280px; height:40px; padding:0 10px; margin-bottom:20px; border-radius:4px; background:#fff;}
+.reg-area .send-yzm{ width:300px; height:40px; margin-bottom:20px;}
+.reg-area .send-yzm>a{ display:block; float:left; width:140px; height:40px; border-radius:4px; background:#333; color:#fff; line-height:40px; text-align:center; font-size:12px;}
+.reg-area .send-yzm>a:hover{ text-decoration:none;}
+.reg-area .send-yzm a.sound{ display:none;}
+.reg-area .send-yzm a.number{ margin:0px;}
+.reg-area .send-yzm span{ display:none; float:left; width:120px; height:40px; line-height:40px;}
+.reg-area .send-yzm span a{ display:block; margin-left:20px; font-size:12px; line-height:40px;}
+.reg-area input[type="submit"]{ width:300px; height:40px; cursor:pointer; margin-bottom:20px; font-size:16px; color:#fff; background:#ff2725; border-radius:4px; line-height:40px; text-align:center;}
+.reg-area p{ text-align:center; font-size:14px;}
+.reg-area p a{ color:#292929;}
+.reg-area ul li{ position:relative;}
+.reg-area ul li span{ display:none; position:absolute; height:40px; line-height:40px; left:300px; top:0; width:140px; padding-left:10px; font-size:14px; color:#ff2725;}
+.reg-area .res{ display:none; color:#ff2725; font-size:14px; margin-bottom:20px;}
+
+.log-area{ display:none; width:300px; padding:60px 160px; height:auto; position:fixed; left:50%; margin-left:-310px; top:50%; z-index:100; background:#e5e5e5; border-radius:8px;}
+.log-area h2{ font-size:20px; color:#808080; margin-bottom:20px;}
+.log-area h2 a{ float:right; font-size:14px; display:block; height:27px; line-height:27px;}
+.log-area input[type="text"],.log-area input[type="password"]{ width:280px; height:40px; padding:0 10px; margin-bottom:20px; border-radius:4px; background:#fff;}
+.log-area .send-yzm{ width:300px; height:40px; margin-bottom:20px;}
+.log-area .send-yzm a{ display:block; float:left; width:140px; height:40px; border-radius:4px; background:#333; color:#fff; line-height:40px; text-align:center; font-size:12px;}
+.log-area .send-yzm a.sound{ margin-right:20px;}
+.log-area .send-yzm a.number{ margin:0px;}
+.log-area input[type="submit"]{ width:300px; height:40px; cursor:pointer; margin-bottom:20px; font-size:16px; color:#fff; background:#ff2725; border-radius:4px; line-height:40px; text-align:center;}
+.log-area p{ text-align:center; font-size:14px;}
+.log-area p a{ color:#292929;}
+.log-area ul li{ position:relative;}
+.log-area ul li span{ display:none; position:absolute; height:40px; line-height:40px; left:300px; top:0; width:140px; padding-left:10px; font-size:14px; color:#ff2725;}
+.log-area .res{ display:none; color:#ff2725; font-size:14px; margin-bottom:20px;}
+
+.log-reset{ display:none; width:300px; padding:60px 160px; height:auto; position:fixed; left:50%; margin-left:-310px; top:50%; z-index:100; background:#e5e5e5; border-radius:8px;}
+.log-reset h2{ font-size:20px; color:#808080; margin-bottom:20px;}
+.log-reset input[type="text"],.log-reset input[type="password"]{ width:280px; height:40px; padding:0 10px; margin-bottom:20px; border-radius:4px; background:#fff;}
+.log-reset .send-yzm{ width:300px; height:40px; margin-bottom:20px;}
+.log-reset .send-yzm>a{ display:block; float:left; width:140px; height:40px; border-radius:4px; background:#333; color:#fff; line-height:40px; text-align:center; font-size:12px;}
+.log-reset .send-yzm>a:hover{ text-decoration:none;}
+.log-reset .send-yzm a.sound{ display:none;}
+.log-reset .send-yzm a.number{ margin:0px;}
+.log-reset .send-yzm span{ display:none; float:left; width:120px; height:40px; line-height:40px;}
+.log-reset .send-yzm span a{ display:block; margin-left:20px; font-size:12px; line-height:40px;}
+.log-reset input[type="submit"]{ width:300px; height:40px; cursor:pointer; margin-bottom:20px; font-size:16px; color:#fff; background:#ff2725; border-radius:4px; line-height:40px; text-align:center;}
+.log-reset p{ text-align:center; font-size:14px;}
+.log-reset p a{ color:#292929;}
+.log-reset ul li{ position:relative;}
+.log-reset ul li span{ display:none; position:absolute; height:40px; line-height:40px; left:300px; top:0; width:140px; padding-left:10px; font-size:14px; color:#ff2725;}
+.log-reset .res{ display:none; color:#ff2725; font-size:14px; margin-bottom:20px;}
+
+
+/****** head area *******/
+.head{  width:1180px; height:62px; padding:22px 10px 0 10px; margin:0 auto;}
+.head .tel{ float:left; height:40px; line-height:40px; margin-right:19px;}
+.head .tel i{ display:block; float:left; width:20px; height:20px; line-height:20px; margin:10px 7px 0 0; background:url(../images/icon.png) 0 -50px no-repeat;}
+.head .map{ float:left; display:block; width:112px; height:38px; line-height:38px; border: 1px solid #808080; border-radius:7px;}
+.head .map i{ display:block; float:left; width:20px; height:20px; line-height:20px; margin:9px 4px 0 4px; background:url(../images/icon.png) -20px -50px no-repeat;}
+.head .right{ float:right;}
+.head .right .accounts{ display:none; float:left; line-height:40px; height:40px;}
+.head .right .login{ display:block; float:left; line-height:40px; height:40px;}
+.head .right .contact{ float:right;}
+.head .right a{ position:relative;}
+.head .right a.qq{ display:block; float:left; margin:10px 0 0 35px; width:20px; height:20px; background:url(../images/icon.png) -40px -50px no-repeat;}
+.head .right a.wx{ display:block; float:left; margin:10px 0 0 35px; width:20px; height:20px; background:url(../images/icon.png) -60px -50px no-repeat;}
+.head .right a.email{ display:block; float:left; margin:10px 0 0 35px; width:20px; height:20px; background:url(../images/icon.png) -80px -50px no-repeat;}
+.head .right a span{ display:none; position:absolute; width:120px; line-height:20px; padding:10px 0; text-align:center; top:40px; left:-20px; background:#fff; z-index:11;}
+.head .right a span:before{ content:''; position:absolute; width:0px; height:0px; border:10px solid transparent; border-bottom:10px solid #fff; left:20px; top:-20px;}
+
+/****** bottom area *******/
+.bottom{ width:100%; height:220px; background:#3a3f44;}
+.bottom .inner{ width:1180px; padding:0 10px; height:220px; margin:0 auto;}
+.bottom .inner .ftlogo{ margin-top:69px;}
+.bottom .inner>ul{ float:right; width:510px; height:170px; margin-top:50px;}
+.bottom .inner>ul>li{ float:left; width:160px; height:170px; padding-left:10px;}
+.bottom .inner>ul>li h3{ font-size:16px; color:#fff; font-weight:700; height:40px; line-height:40px;}
+.bottom .inner>ul>li p a{ width:80px; height:25px; display:block; color:#808080; font-size:12px; float:left; line-height:25px;}
+.bottom .inner>ul>li ul li{ width:160px; height:25px; color:#808080; font-size:12px; float:left; line-height:25px;}
+.bottom .inner>ul>li ul li span{ display:block; width:12px; height:12px; float:left; margin:7px 5px 0 0; background-image:url(../images/icon.png);}
+.bottom .inner>ul>li ul li span.qq{ background-position:-24px -70px;}
+.bottom .inner>ul>li ul li span.wx{ background-position:-36px -70px;}
+.bottom .inner>ul>li ul li span.at{ background-position:-48px -70px;}
+.bottom .inner>ul>li ul li span.tel{ background-position:0 -70px;}
+
+/****** footer area *******/
+.footer{ width:100%; height:140px; background:#21262a;}
+.footer .inner{ width:1180px; padding:0 10px; height:140px; line-height:140px; color:#ddd; margin:0 auto;}
+.footer .inner a{ color:#ddd; padding-right:20px;}
+.footer .inner span{ float:right; color:#c5c5c5; font-size:14px;}
+
+
+.appoint{ display:none; width:800px; height:660px; position:fixed; left:50%; top:50%; margin-left:-400px; margin-top:-330px; background:#fff; z-index:101;}
+.appoint .top{ position:relative; width:800px; height:340px; overflow:hidden;}
+.appoint .top i{ position:absolute; display:block; width:60px; height:60px; right:0; top:0; cursor:pointer; background:url(../images/close.png) center no-repeat;}
+.appoint .btm{ width:800px; height:320px;}
+.appoint .btm .left-price{ float:left; width:518px; height:280px; padding:20px;}
+.appoint .btm .left-price h1{ color:#ff2725; font-size:22px; margin-bottom:10px;}
+.appoint .btm .left-price h1 span{ font-size:57px; font-weight:bold;}
+.appoint .btm .left-price ul{ width:518px;}
+.appoint .btm .left-price ul li{ float:left; width:130px; height:40px; line-height:40px; padding:0 10px; margin:0 20px 20px 0; color:#333; font-size:12px; border:1px #dfdede solid;}
+.appoint .btm .left-price ul li span{ color:#878787; padding-right:10px;}
+.appoint .btm .right-form{ float:right; width:202px; height:280px; padding:20px; background:#e7e7e7;}
+.appoint .btm .right-form input[type="text"]{ width:182px; height:40px; line-height:40px; padding:0 10px; border-radius:4px; background:#fff; margin-bottom:20px;}
+.appoint .btm .right-form textarea{ width:182px; height:70px; line-height:35px; padding:0 10px; border-radius:4px; }
+.appoint .btm .right-form input[type="submit"]{ width:202px; height:40px; line-height:40px; border-radius:4px; background:#333; color:#fff; cursor:pointer;}
+.appoint .btm .right-form .res{ height:30px; line-height:30px; color:#ff2725; font-size:14px; text-align:left;}
+.appoint .btm .right-form span{ display:block; position:relative;}
+.appoint .btm .right-form span em{ position:absolute; display:none; width:auto; padding:0 10px 0 30px; left:212px; background:#ff2725 url(../images/erroricon.png) 10px center no-repeat; top:0; opacity:0.8; border-radius:2px; height:24px; line-height:24px; font-size:14px; color:#fff; font-style:normal; top:8px; z-index:101;}	/*diaplay:table*/
+.appoint .btm .right-form span em:before{ content:''; position:absolute; left:-10px; top:7px; width:0px; height:0px; border:5px transparent solid; border-right:5px #ff2725 solid;}
+/*修改我投放的列表布局*/
+.appoint .btm .b-price{ width:760px; height:280px; padding:20px;}
+.appoint .btm .b-price h1{ color:#ff2725; font-size:22px; margin-bottom:10px;}
+.appoint .btm .b-price h1 span{ font-size:57px; font-weight:bold;}
+.appoint .btm .b-price ul{ width:auto;}
+.appoint .btm .b-price ul li{ float:left; width:130px; height:40px; line-height:40px; padding:0 10px; margin:0 20px 20px 0; color:#333; font-size:14px; border:1px #dfdede solid;}
+.appoint .btm .b-price ul li span{ color:#878787; padding-right:10px;}
+
+.box .close{ position:absolute; right:30px; top:30px; width:16px; height:16px; cursor:pointer; background:url(../images/cross1.png) center no-repeat;}
+
+
+
+
+
+
+
+
+
+
+
+
