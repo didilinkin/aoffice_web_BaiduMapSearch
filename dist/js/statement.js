@@ -7,7 +7,7 @@ var SearchModel = [
     {
         cityCode: "青岛",                       // 城市编码
         regionCode: "市南区",                   // 区域编码
-        regionLongitude: 36.092759,            // 行政区地理经度，修正样式　经度+0.012
+        regionLongitude: 36.081759,            // 行政区地理经度，修正样式　经度+0.012
         regionLatitude: 120.389053,            // 行政区地理纬度
         resourceAmount: 300,                   // 套数
         url: "市南区#"                          // 链接
@@ -16,8 +16,8 @@ var SearchModel = [
     {
         cityCode: "青岛",                        // 城市编码
         regionCode: "市北区",                    // 区域编码
-        regionLongitude: 36.127754,             // 行政区地理经度 ，修正样式　经度+0.012
-        regionLatitude: 120.332834,             // 行政区地理纬度
+        regionLongitude: 36.121754,             // 行政区地理经度 ，修正样式　经度+0.012
+        regionLatitude: 120.362834,             // 行政区地理纬度
         resourceAmount: 310,                    // 套数
         url: "市北区#"                           // 链接
     },
@@ -34,7 +34,7 @@ var SearchModel = [
     {
         cityCode: "青岛",                        // 城市编码
         regionCode: "崂山区",                    // 区域编码
-        regionLongitude: 36.135422,            // 行政区地理经度，修正样式　经度+0.012
+        regionLongitude: 36.125422,            // 行政区地理经度，修正样式　经度+0.012
         regionLatitude: 120.455682,              // 行政区地理纬度
         resourceAmount: 330,                    // 套数
         url: "崂山区#"                                // 链接
@@ -55,23 +55,20 @@ function addBuilding(ObjGroup){
     for (var i = 0; i < ObjGroup.length; i++) {
         var Arr = new Object();
         Arr = ObjGroup[i];
-        // 拼接属性文字内容
-        var text = Arr.regionCode+ "<br />" + Arr.resourceAmount+ "套" ,
-            mouseoverText = Arr.regionCode+ "<br / >" + Arr.resourceAmount+ "套" ,
-            regionCode = Arr.regionCode,
-            url = Arr.url;
+        var regionCode = Arr.regionCode,     // 行政区
+            url = Arr.url;                   // 链接
+        var num = Arr.resourceAmount+ "套";   // 拼接下面字符串
         var myCompOverlay = new ComplexCustomOverlay(
-            new BMap.Point(Arr.regionLatitude,Arr.regionLongitude),text,mouseoverText,regionCode,url
+            new BMap.Point(Arr.regionLatitude,Arr.regionLongitude),num,regionCode,url
         );
         map.addOverlay(myCompOverlay);
     }
 };
 // 复杂的自定义覆盖物
-function ComplexCustomOverlay(point,text,mouseoverText,regionCode,url){
+function ComplexCustomOverlay(point,num,regionCode,url){
     this._point = point;
-    this._text = text;
-    this._overText = mouseoverText;
-    this.regionCode = regionCode;                   // 城市编码
+    this._num = num;
+    this.regionCode = regionCode;               // 城市编码
     this.url = url;                             // 链接
 }
 ComplexCustomOverlay.prototype = new BMap.Overlay();
@@ -81,7 +78,6 @@ ComplexCustomOverlay.prototype.initialize = function(map){
     div.style.position = "absolute";
     div.style.zIndex = BMap.Overlay.getZIndex(this._point.lat);
     div.style.backgroundColor = "#EE5D5B";
-    // div.style.border = "1px solid #BC3B3A";
     div.style.color = "white";
     // 圆形自定义覆盖物
     div.style.width = "70px";
@@ -90,6 +86,7 @@ ComplexCustomOverlay.prototype.initialize = function(map){
     div.style.display = "flex";
     div.style.justifyContent = "center";
     div.style.alignItems = "center";
+    div.setAttribute("id",this.regionCode);
     // 圆形自定义覆盖物 end
     div.style.padding = "2px";
     div.style.lineHeight = "18px";
@@ -104,13 +101,18 @@ ComplexCustomOverlay.prototype.initialize = function(map){
         console.log(regionCode);
         console.log("跳转链接" + url);
     }
-    // div.setAttribute("herf",url);
-    var span = this._span = document.createElement("span");
-    div.appendChild(span);
-    span.appendChild(document.createTextNode(this._text));
+    var ul = this._ul = document.createElement("ul");
+    div.appendChild(ul);
+    var regionCodeLi = document.createElement("li"),
+        numLi = document.createElement("li"),
+        regionCodeTextNode=document.createTextNode(this.regionCode),
+        numTextNode=document.createTextNode(this._num);
+    regionCodeLi.appendChild(regionCodeTextNode);
+    numLi.appendChild(numTextNode);
+    ul.appendChild(regionCodeLi);
+    ul.appendChild(numLi);
     var that = this;
     var arrow = this._arrow = document.createElement("div");
-        arrow.style.background = "url(http://map.baidu.com/fwmap/upload/r/map/fwmap/static/house/images/label.png) no-repeat";
         arrow.style.position = "absolute";
         arrow.style.width = "11px";
         arrow.style.height = "10px";
@@ -120,28 +122,21 @@ ComplexCustomOverlay.prototype.initialize = function(map){
     div.appendChild(arrow);
     div.onmouseover = function(){
         this.style.backgroundColor = "#6BADCA";
-        // this.style.borderColor = "#0000ff";
         this.style.cursor = "pointer";
-        this.getElementsByTagName("span")[0].innerHTML = that._overText;
         arrow.style.backgroundPosition = "0px -20px";
     }
     div.onmouseout = function(){
         this.style.backgroundColor = "#EE5D5B";
-        // this.style.borderColor = "#BC3B3A";
-        this.getElementsByTagName("span")[0].innerHTML = that._text;
         arrow.style.backgroundPosition = "0px 0px";
     }
     map.getPanes().labelPane.appendChild(div);
     return div;
 }
 ComplexCustomOverlay.prototype.draw = function(){
-  var map = this._map;
-  var pixel = map.pointToOverlayPixel(this._point);
-  this._div.style.left = pixel.x - parseInt(this._arrow.style.left) + "px";
-  this._div.style.top  = pixel.y - 30 + "px";
+    var map = this._map;
+    var pixel = map.pointToOverlayPixel(this._point);
+    this._div.style.left = pixel.x - parseInt(this._arrow.style.left) + "px";
+    this._div.style.top  = pixel.y - 30 + "px";
 }
-
-
-
 // 输出自定义覆盖物
 addBuilding(SearchModel);
