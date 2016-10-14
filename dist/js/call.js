@@ -9,3 +9,19 @@ var top_left_navigation = new BMap.NavigationControl();  //左上角，添加默
 map.addControl(top_left_control);   // 添加比例尺
 map.addControl(top_left_navigation);    // 默认缩放平移控件
 map.enableScrollWheelZoom(true);
+<<<<<<< HEAD
+=======
+// 地图缩放监听
+map.addEventListener("zoomend", function(){
+    var zoomLevel = this.getZoom(),     //　当前地图级别
+        centerPoint = this.getCenter(); //  当前中心点坐标
+    if (zoomLevel>=14&&zoomLevel<15){
+        console.log("输出2级地图内容:商圈");
+        console.log(centerPoint); // 返回中心点　和　级别
+    }else if (zoomLevel>=15){
+        console.log("输出3级地图内容:详细覆盖");
+    }else{
+        console.log("输出1级地图内容:行政区");
+    }
+});
+>>>>>>> c6795f65c769eaddd4d1a27581073f60ae707626
