@@ -64,27 +64,25 @@
 	    	<div class="inner">
 	        	<div class="top">
 					<ul>
-						<li class="on"><img src="images/icon-grid.png" width="18" height="18" alt="">GRID</li>
-						<li><img src="images/icon-map.png" width="18" height="18" alt="">MAP</li>
+						<li><img src="images/icon-grid.png" width="18" height="18" alt="">GRID</li>
+						<li class="on"><img src="images/icon-map.png" width="18" height="18" alt="">MAP</li>
 					</ul>
 	            	<img src="images/home.png" width="18" height="18" alt="">返回主页
 	            </div>
 	            <div class="mapsearch">
 					<div class="list-input select03">
-						<p>区域</p>
+						<p>类型</p>
 						<ul>
-							<li val="0">不限</li>
-							<li val="1">市北区</li>
-							<li val="2">市南区</li>
-							<li val="3">李沧区</li>
-							<li val="4">黄岛区</li>
+							<li val="0">类型不限</li>
+							<li val="1">户型</li>
+							<li val="2">工位</li>
 						</ul>
 						<input type="hidden" name="area" value="">
 					</div>
 	            	<div class="list-input select01">
 	                	<p>面积</p>
 	                    <ul>
-	                    	<li val="0">不限</li>
+	                    	<li val="0">面积不限</li>
 	                    	<li val="1">100m²以下</li>
 	                        <li val="2">100-200m²</li>
 	                        <li val="3">200-300m²</li>
@@ -95,15 +93,15 @@
 	                    <input type="hidden" name="area" value="">
 	                </div>
 	                <div class="list-input select02">
-	                	<p>价位</p>
+	                	<p>价格</p>
 	                    <ul>
-	                    	<li val="0">不限</li>
-	                    	<li val="1">2元以下</li>
-	                        <li val="2">2-4元</li>
-	                        <li val="3">4-6元</li>
-	                        <li val="4">6-8元²</li>
-	                        <li val="5">8-10元</li>
-	                        <li val="6">10-∞元</li>
+	                    	<li val="0">价格不限</li>
+	                    	<li val="1">2元以下/㎡/天</li>
+	                        <li val="2">2-4元/㎡/天</li>
+	                        <li val="3">4-6元/㎡/天</li>
+	                        <li val="4">6-8元²/㎡/天</li>
+	                        <li val="5">8-10元/㎡/天</li>
+	                        <li val="6">10-∞元/㎡/天</li>
 	                    </ul>
 	                    <input type="hidden" name="price" value="">
 	                </div>
@@ -112,9 +110,7 @@
 	        </div>
 	        <!--map begin-->
 	        <div class="mapwrap">
-	        	<div id="mapbox">
-
-	            </div>
+	        	<div id="mapbox"></div>
 	        </div>
 	        <!--map end-->
 	    </div>

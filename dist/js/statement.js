@@ -123,10 +123,12 @@ ComplexCustomOverlay.prototype.initialize = function(map){
     div.onmouseover = function(){
         this.style.backgroundColor = "#6BADCA";
         this.style.cursor = "pointer";
+        this.style.zIndex = "9";
         arrow.style.backgroundPosition = "0px -20px";
     }
     div.onmouseout = function(){
         this.style.backgroundColor = "#EE5D5B";
+        this.style.zIndex = "1";
         arrow.style.backgroundPosition = "0px 0px";
     }
     map.getPanes().labelPane.appendChild(div);
