@@ -63,9 +63,24 @@
 	    <div class="cont">
 	    	<div class="inner">
 	        	<div class="top">
+					<ul>
+						<li class="on"><img src="images/icon-grid.png" width="18" height="18" alt="">GRID</li>
+						<li><img src="images/icon-map.png" width="18" height="18" alt="">MAP</li>
+					</ul>
 	            	<img src="images/home.png" width="18" height="18" alt="">返回主页
 	            </div>
 	            <div class="mapsearch">
+					<div class="list-input select03">
+						<p>区域</p>
+						<ul>
+							<li val="0">不限</li>
+							<li val="1">市北区</li>
+							<li val="2">市南区</li>
+							<li val="3">李沧区</li>
+							<li val="4">黄岛区</li>
+						</ul>
+						<input type="hidden" name="area" value="">
+					</div>
 	            	<div class="list-input select01">
 	                	<p>面积</p>
 	                    <ul>
@@ -92,7 +107,7 @@
 	                    </ul>
 	                    <input type="hidden" name="price" value="">
 	                </div>
-	                <input type="submit" value="搜索">
+	                <!-- <input type="submit" value="搜索"> -->
 	            </div>
 	        </div>
 	        <!--map begin-->
@@ -156,8 +171,10 @@
 		})
 		$('.select01 p').on('click',sel)
 		$('.select02 p').on('click',sel)
+		$('.select03 p').on('click',sel)
 		$('.select01').mouseleave(leave)
 		$('.select02').mouseleave(leave)
+		$('.select03').mouseleave(leave)
 		function leave(){
 			$(this).find('ul').css({width:0+'px',height:0+'px'});
 		}
