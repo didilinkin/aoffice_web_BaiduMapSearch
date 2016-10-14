@@ -5,9 +5,9 @@
 var businessCircle = [
     // 注释格式：市南区-商圈-XXX
 	{
-        code: "wusi",                   // 编码
-        name: "五四广场",                   // 商圈名称
-        longitude: 36.070023,       // 商圈经度
+        code: "wusi",						// 编码
+        name: "五四广场",					// 商圈名称
+        longitude: 36.070023,			// 商圈经度
         latitude: 120.393878,       // 商圈纬度
         resourceAmount: 100         // 资源数量
     },

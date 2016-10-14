@@ -49,27 +49,13 @@ var SearchModel = [
         url: "黄岛区#"                                // 链接
     }
 ]
-
-// 添加单个自定义覆盖物（SearchModel对象）
-function addBuilding(ObjGroup){
-    for (var i = 0; i < ObjGroup.length; i++) {
-        var Arr = new Object();
-        Arr = ObjGroup[i];
-        var regionCode = Arr.regionCode,     // 行政区
-            url = Arr.url;                   // 链接
-        var num = Arr.resourceAmount+ "套";   // 拼接下面字符串
-        var myCompOverlay = new ComplexCustomOverlay(
-            new BMap.Point(Arr.regionLatitude,Arr.regionLongitude),num,regionCode,url
-        );
-        map.addOverlay(myCompOverlay);
-    }
-};
-// 复杂的自定义覆盖物
-function ComplexCustomOverlay(point,num,regionCode,url){
+// 行政区＋商圈　自定义覆盖物(坐标点，数量＋“套”，名称，url)————１.2级通用
+// num 应该是text(带br)<name+<br>+resourceAmount+"套">,code是编码
+function ComplexCustomOverlay(point,num,code,url){
     this._point = point;
     this._num = num;
-    this.regionCode = regionCode;               // 城市编码
-    this.url = url;                             // 链接
+    this.code = code;
+    this.url = url;
 }
 ComplexCustomOverlay.prototype = new BMap.Overlay();
 ComplexCustomOverlay.prototype.initialize = function(map){
@@ -86,7 +72,7 @@ ComplexCustomOverlay.prototype.initialize = function(map){
     div.style.display = "flex";
     div.style.justifyContent = "center";
     div.style.alignItems = "center";
-    div.setAttribute("id",this.regionCode);
+    div.setAttribute("id",this.code);
     // 圆形自定义覆盖物 end
     div.style.padding = "2px";
     div.style.lineHeight = "18px";
@@ -94,22 +80,23 @@ ComplexCustomOverlay.prototype.initialize = function(map){
     div.style.MozUserSelect = "none";
     div.style.fontSize = "12px"
     // 保存code
-    var regionCode = this.regionCode;   //　区域代码
+    var code = this.code;   //　区域代码
     var url = this.url;
     div.onclick = function businessCirclePoint(){
-        // Ajax上传regionCode，并改变中心点
-        console.log(regionCode);
+        // Ajax上传code，并改变中心点
+        console.log(code);
         console.log("跳转链接" + url);
     }
+    // div.getElementsByTagName("span")[0].innerHTML =  this._text;
     var ul = this._ul = document.createElement("ul");
     div.appendChild(ul);
-    var regionCodeLi = document.createElement("li"),
+    var codeLi = document.createElement("li"),
         numLi = document.createElement("li"),
-        regionCodeTextNode=document.createTextNode(this.regionCode),
+        codeTextNode=document.createTextNode(this.code),
         numTextNode=document.createTextNode(this._num);
-    regionCodeLi.appendChild(regionCodeTextNode);
+    codeLi.appendChild(codeTextNode);
     numLi.appendChild(numTextNode);
-    ul.appendChild(regionCodeLi);
+    ul.appendChild(codeLi);
     ul.appendChild(numLi);
     var that = this;
     var arrow = this._arrow = document.createElement("div");
@@ -140,5 +127,17 @@ ComplexCustomOverlay.prototype.draw = function(){
     this._div.style.left = pixel.x - parseInt(this._arrow.style.left) + "px";
     this._div.style.top  = pixel.y - 30 + "px";
 }
-// 输出自定义覆盖物
-addBuilding(SearchModel);
+// 行政区自定义覆盖物（SearchModel对象）
+function addRegion(ObjGroup){
+    for (var i = 0; i < ObjGroup.length; i++) {
+        var Arr = new Object();
+        Arr = ObjGroup[i];
+        var regionCode = Arr.regionCode,     // 行政区
+            url = Arr.url;                   // 链接
+        var num = Arr.resourceAmount + "套";   // 拼接下面字符串
+        var myCompOverlay = new ComplexCustomOverlay(
+            new BMap.Point(Arr.regionLatitude,Arr.regionLongitude),num,regionCode,url
+        );
+        map.addOverlay(myCompOverlay);
+    }
+};
