@@ -9,6 +9,8 @@ var top_left_navigation = new BMap.NavigationControl();  //左上角，添加默
 map.addControl(top_left_control);   // 添加比例尺
 map.addControl(top_left_navigation);    // 默认缩放平移控件
 map.enableScrollWheelZoom(true);
+<<<<<<< HEAD
+=======
 // 地图缩放监听
 map.addEventListener("zoomend", function(){
     var zoomLevel = this.getZoom(),     //　当前地图级别
@@ -22,3 +24,4 @@ map.addEventListener("zoomend", function(){
         console.log("输出1级地图内容:行政区");
     }
 });
+>>>>>>> c6795f65c769eaddd4d1a27581073f60ae707626
