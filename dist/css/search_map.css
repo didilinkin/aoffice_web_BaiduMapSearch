@@ -1,5 +1,1 @@
-.cont .inner .top ul li {
-  cursor: pointer; }
-
-.cont .inner .top ul li.on {
-  cursor: default; }
+.cont .inner .top ul li{cursor:pointer}.cont .inner .top ul li.on{cursor:default}.range-overlay{position:absolute;background-color:#EE5D5B;color:white;padding:2px;font-size:12px;line-height:18px;white-space:nowrap;MozUserSelect:none;width:70px;height:70px;border-radius:50%;display:flex;justify-content:center;align-items:center;background-color:#EE5D5B}.range-overlay:hover{background-color:#6BADCA;cursor:pointer}

@@ -1,4 +1,28 @@
+@charset "utf-8"
+=w-h($width,$height)
+    width: $width
+    height: $height
 .cont .inner .top ul li
     cursor: pointer
 .cont .inner .top ul li.on
     cursor: default
+// 范围覆盖物(1级与2级通用)
+.range-overlay
+    position: absolute
+    background-color: #EE5D5B
+    color: white
+    padding: 2px
+    font-size: 12px
+    line-height: 18px
+    white-space: nowrap
+    MozUserSelect: none
+    // 圆形覆盖物
+    +w-h(70px,70px)
+    border-radius: 50%
+    display: flex
+    justify-content: center
+    align-items: center
+    background-color: #EE5D5B
+    &:hover
+        background-color: #6BADCA
+        cursor: pointer
