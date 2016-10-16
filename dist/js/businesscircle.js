@@ -79,8 +79,8 @@ var businessCirclePoint = [
     {
         code: "licun",                   // 编码
         name: "李村公园",                   // 商圈名称
-        longitude: 36.17113359766,       // 商圈经度
-        latitude: 120.42998941977,       // 商圈纬度
+        longitude: 36.173258,       // 商圈经度
+        latitude: 120.432582,       // 商圈纬度
         resourceAmount: 100,         // 资源数量
 		url: "#"                          // 链接
     },
@@ -88,8 +88,8 @@ var businessCirclePoint = [
     {
         code: "dongli",                   // 编码
         name: "东李",                   // 商圈名称
-        longitude: 36.17113359766,       // 商圈经度
-        latitude: 120.42998941977,       // 商圈纬度
+        longitude: 36.165595,       // 商圈经度
+        latitude: 120.444511,       // 商圈纬度
         resourceAmount: 100,         // 资源数量
 		url: "#"                          // 链接
     },

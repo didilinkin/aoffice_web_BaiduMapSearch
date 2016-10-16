@@ -15,13 +15,13 @@ map.addEventListener("zoomend", function(){
         centerPoint = this.getCenter(); //  当前中心点坐标
     if (zoomLevel>=14&&zoomLevel<15){
 		map.clearOverlays();    // 清理地图上面所有点
-		addRangeOverlay(businessCirclePoint);
-		console.log("输出2级地图内容:商圈");		// 商圈自定义覆盖物
+		addRangeOverlay(businessCirclePoint,16);
+		// console.log("输出2级地图内容:商圈");		// 商圈自定义覆盖物
     }else if (zoomLevel>=15){
-        console.log("输出3级地图内容:详细覆盖");
+        // console.log("输出3级地图内容:详细覆盖");
     }else{
 		map.clearOverlays();    // 清理地图上面所有点
-		addRangeOverlay(RegionPoint);		// 输出行政区自定义覆盖物
-		console.log("输出1级地图内容:行政区");
+		addRangeOverlay(RegionPoint,14);		// 输出行政区自定义覆盖物
+		// console.log("输出1级地图内容:行政区");
     }
 });
