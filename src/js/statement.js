@@ -17,16 +17,3 @@ function addRangeOverlay(ObjGroup,setZoom){
         map.addOverlay(myCompOverlay);
     }
 };
-function addBuilding(ObjGroup,setZoom){
-    for (var i = 0; i < ObjGroup.length; i++) {
-        var Arr = new Object();
-        Arr = ObjGroup[i];
-        // 拼接属性文字内容
-        var text = "￥" + Arr.priceBeginning +  "起",
-            mouseoverTxt = Arr.name + " " + Arr.resourceAmount + "套" ;
-        var myCompOverlay = new ComplexCustomOverlay(
-            new BMap.Point(Arr.longitude,Arr.latitude),text,mouseoverTxt,Arr.code
-        );
-        map.addOverlay(myCompOverlay);
-    }
-};

@@ -42,19 +42,19 @@ gulp.task('sass', function () {
 });
 
 // JS清理(不处理dist／JS文件)
-// gulp.task('minifyjs', function() {
-// 	// 按顺序加载 (暂时保有main部分，分拆后 删除这部分引用)
-//     return gulp.src([
-// 			'./src/js/call.js',
-// 			'./src/js/statement.js'
-// 		])
-//     // .pipe(concat('main.js'))    		//合并所有js到main.js
-// 	// .pipe(uglify())    				//压缩
-// 	// .pipe(rename({suffix: '.min'})) 	//rename压缩后的文件名
-//     .pipe(gulp.dest('dist/js'))       	//输出到文件夹
-// 	// 刷新页面
-// 	.pipe(connect.reload());
-// });
+gulp.task('minifyjs', function() {
+	// 按顺序加载 (暂时保有main部分，分拆后 删除这部分引用)
+    return gulp.src([
+			'./src/js/call.js',
+			'./src/js/statement.js'
+		])
+    // .pipe(concat('main.js'))    		//合并所有js到main.js
+	// .pipe(uglify())    				//压缩
+	// .pipe(rename({suffix: '.min'})) 	//rename压缩后的文件名
+    .pipe(gulp.dest('dist/js'))       	//输出到文件夹
+	// 刷新页面
+	.pipe(connect.reload());
+});
 
 // 图片压缩
 gulp.task('imagemin',function(){

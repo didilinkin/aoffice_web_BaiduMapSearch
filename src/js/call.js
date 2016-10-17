@@ -18,7 +18,6 @@ map.addEventListener("zoomend", function(){
 	var zoomLevel = this.getZoom();     //　当前地图级别
 	if (zoomLevel >= 15){
 		if (!lastLevel >= 15) {
-			addBuilding(SearchModel,17);
 			// console.log("输出3级地图内容:详细覆盖");
 		}
 	}else if (zoomLevel >= 14){

@@ -1,6 +1,5 @@
 // 模拟数据（一级）
 var RegionPoint = [
-    // 行政区1-市南区-
     {
         code: "青岛",
         name: "市南区",
@@ -9,7 +8,6 @@ var RegionPoint = [
         resourceAmount: 300,
         url: "市南区#"
     },
-    // 行政区２-市北区-
     {
         code: "青岛",
         name: "市北区",
@@ -18,7 +16,6 @@ var RegionPoint = [
         resourceAmount: 310,
         url: "市北区#"
     },
-    // 行政区3-李沧区-
     {
         code: "青岛",
         name: "李沧区",
@@ -27,7 +24,6 @@ var RegionPoint = [
         resourceAmount: 320,
         url: "李沧区#"
     },
-    // 行政区4-崂山区
     {
         code: "青岛",
         name: "崂山区",
@@ -36,7 +32,6 @@ var RegionPoint = [
         resourceAmount: 330,
         url: "崂山区#"
     },
-    // 行政区5-黄岛区
     {
         code: "青岛",
         name: "黄岛区",
