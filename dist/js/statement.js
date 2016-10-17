@@ -3,6 +3,7 @@
  */
  // 添加范围自定义覆盖物（1.2级通用）
 function addRangeOverlay(ObjGroup,setZoom){
+    map.clearOverlays();    // 清理地图上面所有点
     for (var i = 0; i < ObjGroup.length; i++) {
         var arr = new Object();
         arr = ObjGroup[i];
