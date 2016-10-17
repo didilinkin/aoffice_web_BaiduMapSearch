@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>A + office</title>
+<link href="css/css.css" type="text/css" rel="stylesheet">
+<link href="css/main.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=oQzxVReETLAbFqIQGxXTAqNKzSIcjjwT"></script>
+<style type="text/css">
+	.mapwrap{ width:100%; height:700px; position:relative; margin:10px 0 25px 0;}
+	.mapsearch{ height:40px;}
+	.mapsearch .list-input{ position: relative; color: #b2b2b2; float:left; width: 245px; margin-right:20px; height: 40px; line-height: 40px; cursor: pointer; border-radius: 4px; padding: 0 10px; background:#fff url(images/updown.png) 247px center no-repeat;}
+	.mapsearch .list-input ul{ position:absolute; top:40px; left:0; width:0; height:0; overflow:hidden; background:#fff; z-index:9; border-bottom-left-radius:4px; border-bottom-right-radius:4px; box-shadow:5px 5px 6px 0 rgba(0,0,0,0.2);}
+	.mapsearch .list-input ul li{ line-height:45px; height:45px; padding:0 10px;}
+	.mapsearch .list-input ul li:hover{ background:#f1f1f1;}
+	.mapsearch input[type="submit"]{ width:120px; height:30px; border-radius:4px; background:#ff2725; color:#fff; margin-top:5px; cursor:pointer;}
+	#mapbox{ width:100%;height:700px;}
+	.range-overlay{ position:absolute; width:70px; height:40px; line-height:20px; padding:15px 0;  border-radius:35px; color:#fff; font-size:12px; text-align:center; background:#EE5D5B;}
+	.range-overlay:hover{background-color:#6BADCA;}
+	
+.pointdetail{ position:relative; float:left; width:420px; height:auto; margin:0 0 20px 20px; background:#fff;}
+.pointdetail:before{ position:absolute; content:''; left:204px; bottom:-24px; width:0; height:0; border:transparent 12px solid; border-top:12px solid #fff;}
+.pointdetail h2{ height:65px; line-height:65px; margin:0px; padding:0 30px; font-size:16px; color:#727272; font-weight:400;}
+.pointdetail h2 span.star{ padding-left:10px;}
+.pointdetail h2 span.star i{ font-style:normal; font-size:10px; color:#b2b2b2; padding-left:3px;}
+.pointdetail h2 span.price{ float:right; font-size:10px; color:#b2b2b2;}
+.pointdetail h2 span.price i{ font-size:14px; font-style:normal; color:#727272; padding:0 3px;}
+.pointdetail p{ margin:0px; padding:0px; height:235px;}
+.pointdetail p a{ display:block; height:235px;}
+.pointdetail ul{ display: block; width:356px; height:auto; background:#fff; padding:18px 32px 0 32px;}
+.pointdetail ul li{ height:35px; line-height:35px; padding:10px 0; color:#b2b2b2; border-bottom:1px #dfdfdf solid;}
+.pointdetail ul li a{ display:block; height:35px; color:#b2b2b2; font-size:14px;}
+.pointdetail ul li a span{ display:block; width:70px; height:35px; line-height:35px; float:left;}
+.pointdetail ul li a span.w110{ width:110px;}
+.pointdetail ul li:last-child{ border:none;}
+.pointdetail ul li.more{ text-align:center;}
+
+.cont .inner .btm .right-list-box ul.grid>li ul li a img{ display:block; float:right;}
+</style>
+</head>
+
+<body>
+<div class="pointdetail clearfix">
+    <h2><span class="price">¥<i>12</i>元/m2/天起</span>宝能中心 <span class="star"><img src="images/star1.png" width="13" height="12" alt=""><i>20</i></span></h2>
+    <p><a href="#" target="_blank"><img src="images/group-1.jpg" width="420" height="235" alt=""></a></p>
+    <ul>
+        <li><a href="#"><span>10m2</span><span class="w110">¥ 3800元/月</span><span>豪装</span><img src="images/smallpic.png" width="56" height="35" alt=""></a></li>
+        <li class="more"><a href="#">查看更多（15~1500m2）</a></li>
+    </ul>
+</div>
+<div class="wrap">
+	<!--head begin-->
+	<div class="head">
+    	<div class="tel">
+        	<i></i>4000-000-000
+        </div>
+        <a href="#" class="map">
+        	<i></i>地图找房
+        </a>
+        <div class="right">
+        	<span class="accounts">
+            	180******** &nbsp;|&nbsp; <a href="#">我的账户</a>
+            </span>
+            <div class="contact">
+                <a href="#" class="qq"><span>15900000000</span></a>
+                <a href="#" class="wx"><span><img src="images/ewm.png" width="100" height="100" alt=""></span></a>
+                <a href="#" class="email"><span>15900000000</span></a>
+            </div>
+        </div>
+    </div>
+    <!--head end-->
+	
+    <!--nav begin-->
+	<div class="navbar">
+    	<div class="inner">
+            <img src="images/logo-red.png" width="220" height="62" alt="">
+            <ul>
+                <li><a href="#">房源信息</a><i></i></li>
+                <li><a href="#">委托找房</a><i></i></li>
+                <li><a href="#">投放房源</a><i></i></li>
+                <li><a href="#">办公装修/家居</a><i></i></li>
+<!--                <span class="line">
+                    <a href="javascript:"><i></i></a>
+                </span>-->
+            </ul>
+            <a href="#" class="go">
+            	<span></span>
+            	<i></i>
+            </a>
+        </div>
+    </div>
+    <!--nav end-->
+    <div class="cont">
+    	<div class="inner">
+        	<div class="top">
+            	<ul>
+                	<li class="on"><img src="images/icon-grid.png" width="18" height="18" alt="">GRID</li>
+                    <li><img src="images/icon-map.png" width="18" height="18" alt="">MAP</li>
+                </ul>
+            	<img src="images/home.png" width="18" height="18" alt="">返回主页
+            </div>
+            <div class="mapsearch">
+            	<div class="list-input select01">
+                	<p>区域</p>
+                    <ul>
+                    	<li val="0">不限</li>
+                    	<li val="1">市北区</li>
+                    	<li val="2">市南区</li>
+                        <li val="3">李沧区</li>
+                        <li val="4">黄岛区</li>
+                    </ul>
+                    <input type="hidden" name="area" value="">
+                </div>
+            	<div class="list-input select02">
+                	<p>面积</p>
+                    <ul>
+                    	<li val="0">不限</li>
+                    	<li val="1">100m²以下</li>
+                        <li val="2">100-200m²</li>
+                        <li val="3">200-300m²</li>
+                        <li val="4">300-500m²</li>
+                        <li val="5">500-1000m²</li>
+                        <li val="6">1000-∞m²</li>
+                    </ul>
+                    <input type="hidden" name="area" value="">
+                </div>
+                <div class="list-input select03">
+                	<p>价位</p>
+                    <ul>
+                    	<li val="0">不限</li>
+                    	<li val="1">2元以下</li>
+                        <li val="2">2-4元</li>
+                        <li val="3">4-6元</li>
+                        <li val="4">6-8元²</li>
+                        <li val="5">8-10元</li>
+                        <li val="6">10-∞元</li>
+                    </ul>
+                    <input type="hidden" name="price" value="">
+                </div>
+                <!--<input type="submit" value="搜索">-->
+            </div>
+        </div>
+        <!--map begin-->
+        <div class="mapwrap">
+        	<div id="mapbox">
+            
+            </div>
+        </div>
+        <!--map end-->
+    </div>
+    <!--bottom begin-->
+    <div class="bottom">
+    	<div class="inner">
+        	<img src="images/ftlogo.png" class="ftlogo" width="300" height="82" alt="">
+            <ul>
+            	<li>
+                	<h3>友情链接</h3>
+                    <p>
+                    	<a href="#">北京办公室</a><a href="#">上海办公室</a>
+                        <a href="#">广州办公室</a><a href="#">深圳办公室</a>
+                        <a href="#">杭州办公室</a><a href="#">黄山办公室</a>
+                        <a href="#">安庆房地产</a><a href="#">西安办公室</a>
+                    </p>
+				</li>
+                <li>
+                	<h3>出租热门</h3>
+                    <p>
+                    	<a href="#">北京办公室</a><a href="#">上海办公室</a>
+                        <a href="#">广州办公室</a><a href="#">深圳办公室</a>
+                        <a href="#">杭州办公室</a><a href="#">黄山办公室</a>
+                        <a href="#">安庆房地产</a><a href="#">西安办公室</a>
+                    </p>
+				</li>
+                <li>
+                	<h3>联系方式</h3>
+                    <ul>
+                    	<li><span class="qq"></span>31480000</li>
+                        <li><span class="wx"></span>shangchao1234</li>
+                        <li><span class="at"></span>SC-tec@163.com</li>
+                        <li><span class="tel"></span>18663200000</li>
+                    </ul>
+				</li>
+            </ul>
+        </div>
+    </div>
+    <!--bottom end-->
+    <div class="footer">
+    	<div class="inner">
+        	<span>&copy; 青岛上朝信息技术有限公司 鲁备：*******4156号</span>
+            <a href="#">关于我们</a><a href="#">网站咨询</a><a href="#">团队招聘</a><a href="#">商务合作</a><a href="#">常见问题</a><a href="#">条款与隐私</a>
+        </div>
+    </div>
+</div>
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.easing.min.js"></script>
+<script type="text/javascript" src="js/businesscircle.js"></script>
+<script type="text/javascript" src="js/regionpoint.js"></script>
+<script>
+
+$('.contact a').hover(function(){
+	$(this).find('span').show().css('top','60px').stop().animate({top:'40px'},1500,'easeOutQuint').siblings().hide();
+},function(){
+	$(this).find('span').hide();	
+})
+
+$('.select01 p').on('click',sel)
+$('.select02 p').on('click',sel)
+$('.select03 p').on('click',sel)
+
+$('.select01').mouseleave(leave)
+$('.select02').mouseleave(leave)
+$('.select03').mouseleave(leave)
+
+function leave(){
+	$(this).find('ul').css({width:0+'px',height:0+'px'});	
+}
+
+function sel(){
+	var _this = $(this);
+	var h = $(this).parent().find('li').height()*$(this).parent().find('li').size();
+	_this.parent().find('ul').stop().animate({'width':'265px','height':h+ 'px'},500);
+	_this.parent().find('li').on('click',function(){
+		$(this).parent().stop().animate({'width':'0px','height':'0px'},500);
+		_this.html($(this).html());
+		_this.parent().find('input').val($(this).attr("val"))
+		
+		if(_this.parent().attr('class') == 'list-input select01'){
+			map.clearOverlays();
+			var arr1 = [];
+			for(var j = 0; j < RegionPoint.length; j++){
+				if($(this).html() == RegionPoint[j].name){
+				arr1.push(RegionPoint[j]);
+				addRangeOverlay(arr1,14);
+			}
+			if($(this).html() == '不限'){
+				addRangeOverlay(RegionPoint,14);
+			}
+		}
+		}
+		
+	});
+		
+}
+
+
+/*baidu map*/
+/*
+ *调用——页面加载中按顺序做的内容
+ */
+var map = new BMap.Map("mapbox", {enableMapClick:false});  // 创建Map实例(关闭底图可点功能)
+	map.centerAndZoom("青岛",11);      // 初始化地图,用城市名设置地图中心点
+// 添加 缩放 与 平移控件
+var top_left_control = new BMap.ScaleControl({anchor: BMAP_ANCHOR_TOP_LEFT});// 左上角，添加比例尺
+var top_left_navigation = new BMap.NavigationControl();  //左上角，添加默认缩放平移控件
+map.addControl(top_left_control);   // 添加比例尺
+map.addControl(top_left_navigation);    // 默认缩放平移控件
+map.enableScrollWheelZoom(true);
+// 地图缩放监听
+map.addEventListener("zoomend", function(){
+    var zoomLevel = this.getZoom(),     //　当前地图级别
+        centerPoint = this.getCenter(); //  当前中心点坐标
+    if ( zoomLevel>=14&&zoomLevel<15 ){
+		map.clearOverlays();    // 清理地图上面所有点
+		addRangeOverlay(businessCirclePoint,16);
+		// console.log("输出2级地图内容:商圈");		// 商圈自定义覆盖物
+    }else if ( zoomLevel>=15 ){
+        // console.log("输出3级地图内容:详细覆盖");
+    }else {
+		map.clearOverlays();    // 清理地图上面所有点
+		addRangeOverlay(RegionPoint,14);		// 输出行政区自定义覆盖物
+		// console.log("输出1级地图内容:行政区");
+    }
+});
+
+function addRangeOverlay(ObjGroup,setZoom){
+    for (var i = 0; i < ObjGroup.length; i++) {
+        var arr = new Object();
+        arr = ObjGroup[i];
+        var code = arr.code,
+            url = arr.url,
+            text = arr.name + "<br />" + arr.resourceAmount + "套"; // 拼接字符串
+        var zoom = setZoom; // 获取地图层级
+        var myCompOverlay = new rangeOverlay(
+            new BMap.Point(arr.latitude,arr.longitude),text,code,url,zoom
+        );
+        map.addOverlay(myCompOverlay);
+    }
+};
+// 行政区＋商圈范围覆盖物——１.2级通用
+function rangeOverlay(point,text,code,url,zoom){
+    this._point = point;
+    this._text = text;
+    this._code = code;
+    this._url = url;
+    this._zoom = zoom;
+}
+rangeOverlay.prototype = new BMap.Overlay();
+rangeOverlay.prototype.initialize = function(map){
+    this._map = map;
+    var div = this._div = document.createElement("div");
+    div.setAttribute("id",this._code);
+    div.setAttribute("class","range-overlay");
+    div.style.zIndex = BMap.Overlay.getZIndex(this._point.lat);
+    // 保存code
+    var code = this._code,   //　区域代码
+        url = this._url,
+        point = this._point,
+        zoom = this._zoom;
+    div.onclick = function businessCirclePoint(){
+        // Ajax上传code，并改变中心点
+        map.setZoom(zoom);      // 根据坐标点进行跳转,改变层级
+        // console.log("跳转链接" + url);
+    }
+    var span = this._span = document.createElement("span");
+    div.appendChild(span);
+    div.getElementsByTagName("span")[0].innerHTML =  this._text;
+    div.onmouseover = function(){
+        this.style.zIndex = "9";
+    }
+    div.onmouseout = function(){
+        this.style.zIndex = "1";
+    }
+    map.getPanes().labelPane.appendChild(div);
+    return div;
+}
+rangeOverlay.prototype.draw = function(){
+    var map = this._map;
+    var pixel = map.pointToOverlayPixel(this._point);
+    // this._div.style.left = pixel.x - parseInt(this._arrow.style.left) + "px";
+    this._div.style.left = pixel.x - 30 + "px";
+    this._div.style.top  = pixel.y - 30 + "px";
+}
+
+
+
+
+
+
+</script>
+</body>
+</html>
