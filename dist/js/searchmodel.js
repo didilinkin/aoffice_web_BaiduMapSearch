@@ -1,18 +1,18 @@
 /*
     实体楼盘,每个商圈做2个实体楼盘数据
 */
-var SearchModel = [
+var BuildingModel = [
     {
         code: "青岛",                               // 编码
         name: "华润大厦",                           // 楼盘名称
-        dayBeginning: "15",                           // 价格按天起点
+        dayBeginning: 15,                           // 价格按天起点
         monthBeginning: "",                         // 价格按月起点
-        priceBeginning: "",                         // 价格起点
+        priceBeginning: 10,                         // 价格起点
         beginningUnit: "元",                          // 价格起点单位
-        resourceAmount: 100                         // 资源数量
-        picUrl: ,                                   // 图片url
-        longitude: 36.081759,                       // 楼盘经度
-        latitude: 120.389053,                       // 楼盘纬度
+        resourceAmount: 123,                         // 资源数量
+        picUrl: "",                                   // 图片url
+        longitude: 36.071691,                       // 楼盘经度
+        latitude: 120.384446,                       // 楼盘纬度
     }
     // {
     //     cityCode: "",                               // 编码

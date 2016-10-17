@@ -11,22 +11,24 @@ function addRangeOverlay(ObjGroup,setZoom){
             url = arr.url,
             text = arr.name + "<br />" + arr.resourceAmount + "套"; // 拼接字符串
         var zoom = setZoom; // 获取地图层级
-        var myCompOverlay = new rangeOverlay(
+        var RangeOverlay = new rangeOverlay(
             new BMap.Point(arr.latitude,arr.longitude),text,code,url,zoom
         );
-        map.addOverlay(myCompOverlay);
+        map.addOverlay(RangeOverlay);
     }
 };
 function addBuilding(ObjGroup,setZoom){
+    map.clearOverlays();    // 清理地图上面所有点
     for (var i = 0; i < ObjGroup.length; i++) {
-        var Arr = new Object();
-        Arr = ObjGroup[i];
+        var buildingArr = new Object();
+        buildingArr = ObjGroup[i];
+        var zoom = setZoom; // 获取地图层级
         // 拼接属性文字内容
-        var text = "￥" + Arr.priceBeginning +  "起",
-            mouseoverTxt = Arr.name + " " + Arr.resourceAmount + "套" ;
-        var myCompOverlay = new ComplexCustomOverlay(
-            new BMap.Point(Arr.longitude,Arr.latitude),text,mouseoverTxt,Arr.code
+        var text = "￥" + buildingArr.priceBeginning +  "起",
+            mouseoverTxt = buildingArr.name + " " + buildingArr.resourceAmount + "套" ;
+        var BuildingOverlay = new buildingOverlay(
+            new BMap.Point(buildingArr.latitude,buildingArr.longitude),text,mouseoverTxt,buildingArr.code,zoom
         );
-        map.addOverlay(myCompOverlay);
+        map.addOverlay(BuildingOverlay);
     }
 };
