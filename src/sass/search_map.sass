@@ -33,11 +33,89 @@
 // 建筑物覆盖物(3级使用)
 .building-overlay
     +auto-overlay
+    padding: 5px 10px
     height: 18px
-    .arrow
-        background: url(../images/label.png) no-repeat
-        overflow: hidden
-        background-position: 0 0
-        +w-h(11px,10px)
+    span
+        font-size: 18px
     &:hover .arrow
         background-position: 0px -20px
+// 弹出信息窗口
+.BMap_bubble_content
+    position: relative
+    float: left
+    +w-h(420px,auto)
+    // margin: 0 0 20px 20px
+    background-color: #FFF
+    &:before
+        position: absolute
+        content: ''
+        left: 204px
+        bottom: -24px
+        +w-h(0,0)
+        border: transparent 12px solid
+            top: 12px solid #FFF
+    h2
+        height: 65px
+        // padding: 0 30px
+        margin: 0
+        font:
+            size: 20px
+            weight: border
+        line-height: 65px
+        color: #727272
+        span.star
+            padding-left: 10px
+            i
+                padding-left: 3px
+                font:
+                    style: normal
+                    size: 10px
+                color: #B2B2B2
+        span.price
+            float: right
+            font-size: 10px
+            color: #B2B2B2
+            i
+                font:
+                    size: 14px
+                    style: normal
+                color: #727272
+                padding: 0 3px
+    p
+        height: 235px
+        margin: 0px
+        padding: 0px
+        a
+            display: block
+            height: 235px
+    ul
+        display: block
+        +w-h(100%,auto)
+        background-color: #FFF
+        padding-top: 10px
+        li
+            height: 35px
+            line-height: 35px
+            padding: 10px 0
+                left: 15px
+            color: #B2B2B2
+            border-bottom: 1px #DFDFDF solid
+            a
+                display: block
+                height: 35px
+                font-size: 14px
+                color: #B2B2B2
+                span
+                    display: block
+                    +w-h(70px,35px)
+                    line-height: 35px
+                    float: left
+                    padding: 5px
+                span.w110
+                    width: 110px
+                img
+                    float: right
+            &:last-child
+                border: none
+        li.more
+            text-align: center

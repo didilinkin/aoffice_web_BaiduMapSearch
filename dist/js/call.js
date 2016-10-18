@@ -77,12 +77,13 @@ rangeOverlay.prototype.draw = function(){
     this._div.style.left = pixel.x - 30 + "px";
     this._div.style.top  = pixel.y - 30 + "px";
 }
-// 建筑物具体覆盖物——3级用
-function buildingOverlay(point,text,mouseoverTxt,code,zoom){
+// 建筑物具体覆盖物——3级用(NO.　是　序号)
+function buildingOverlay(point,text,mouseoverTxt,code,NO,zoom){
 	this._point = point;
 	this._text = text;
 	this._mouseoverTxt = mouseoverTxt;
 	this._code = code;
+    this._NO = NO;
 	this._zoom = zoom;
 }
 buildingOverlay.prototype = new BMap.Overlay();
@@ -91,22 +92,23 @@ buildingOverlay.prototype.initialize = function(map){
     var div = this._div = document.createElement("div");
     div.setAttribute("class","building-overlay");
     div.style.zIndex = BMap.Overlay.getZIndex(this._point.lat);
-    // 保存code
-    var code = this.code
-    div.onclick = function(){
-        console.log(code);　　// 成功打印code
-    }
+    div.setAttribute("onclick","buildingOverlayClick(" +  this._NO　+ ")");
+    // // 保存code
+    // var code = this.code
+    // div.onclick = function(){
+    //     console.log(code);　　// 成功打印code
+    // }
     div.style.fontSize = "12px"
     var span = this._span = document.createElement("span");
     div.appendChild(span);
     span.appendChild(document.createTextNode(this._text));
     var that = this;
-    var arrow = this._arrow = document.createElement("div");
-        arrow.setAttribute("class","arrow");
-        arrow.style.position = "absolute";
-        arrow.style.top = "22px";
-        arrow.style.left = "10px";
-    div.appendChild(arrow);
+    // var arrow = this._arrow = document.createElement("div");
+    //     arrow.setAttribute("class","arrow");
+    //     arrow.style.position = "absolute";
+    //     arrow.style.top = "22px";
+    //     arrow.style.left = "10px";
+    // div.appendChild(arrow);
     div.onmouseover = function(){
         this.getElementsByTagName("span")[0].innerHTML = that._mouseoverTxt;
     }

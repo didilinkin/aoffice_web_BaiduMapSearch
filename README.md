@@ -1,6 +1,8 @@
 # A+Office地图找房页－百度地图项目
 > aoffice_web_BaiduMapSearch
 
+## 变量名-VariableName
+`buildingOverlayObj` : 保存`buildingOverlayArr[NO]`的值(单个建筑物覆盖物对象,根据i传参数)
 
 
 ***
@@ -14,3 +16,7 @@
 2. 如果修改假数据，需要对数组进行拆分，并在点击事件发生是传递当前行政区参数`code`
 3. 假数据的坐标加上小数点不能超过7位
 4. 调用中　判断2级希望改成=14,而不是区间,暂时无法实现(滚轮回滚缩小层级时无法退回1级)
+
+***
+# 等待修改问题
+- [ ] 替换building对象url值

@@ -37,14 +37,90 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 5px 10px;
   height: 18px; }
   .building-overlay:hover {
     background-color: #6BADCA; }
-  .building-overlay .arrow {
-    background: url(../images/label.png) no-repeat;
-    overflow: hidden;
-    background-position: 0 0;
-    width: 11px;
-    height: 10px; }
+  .building-overlay span {
+    font-size: 18px; }
   .building-overlay:hover .arrow {
     background-position: 0px -20px; }
+
+.BMap_bubble_content {
+  position: relative;
+  float: left;
+  width: 420px;
+  height: auto;
+  background-color: #FFF; }
+  .BMap_bubble_content:before {
+    position: absolute;
+    content: '';
+    left: 204px;
+    bottom: -24px;
+    width: 0;
+    height: 0;
+    border: transparent 12px solid;
+      border-top: 12px solid #FFF; }
+  .BMap_bubble_content h2 {
+    height: 65px;
+    margin: 0;
+    font-size: 20px;
+    font-weight: border;
+    line-height: 65px;
+    color: #727272; }
+    .BMap_bubble_content h2 span.star {
+      padding-left: 10px; }
+      .BMap_bubble_content h2 span.star i {
+        padding-left: 3px;
+        font-style: normal;
+        font-size: 10px;
+        color: #B2B2B2; }
+    .BMap_bubble_content h2 span.price {
+      float: right;
+      font-size: 10px;
+      color: #B2B2B2; }
+      .BMap_bubble_content h2 span.price i {
+        font-size: 14px;
+        font-style: normal;
+        color: #727272;
+        padding: 0 3px; }
+  .BMap_bubble_content p {
+    height: 235px;
+    margin: 0px;
+    padding: 0px; }
+    .BMap_bubble_content p a {
+      display: block;
+      height: 235px; }
+  .BMap_bubble_content ul {
+    display: block;
+    width: 100%;
+    height: auto;
+    background-color: #FFF;
+    padding-top: 10px; }
+    .BMap_bubble_content ul li {
+      height: 35px;
+      line-height: 35px;
+      padding: 10px 0;
+        padding-left: 15px;
+      color: #B2B2B2;
+      border-bottom: 1px #DFDFDF solid; }
+      .BMap_bubble_content ul li a {
+        display: block;
+        height: 35px;
+        font-size: 14px;
+        color: #B2B2B2; }
+        .BMap_bubble_content ul li a span {
+          display: block;
+          width: 70px;
+          height: 35px;
+          line-height: 35px;
+          float: left;
+          padding: 5px; }
+        .BMap_bubble_content ul li a span.w110 {
+          width: 110px; }
+        .BMap_bubble_content ul li a img {
+          float: right; }
+      .BMap_bubble_content ul li:last-child {
+        border: none; }
+    .BMap_bubble_content ul li.more {
+      text-align: center; }
