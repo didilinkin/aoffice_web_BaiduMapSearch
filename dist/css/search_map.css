@@ -9,19 +9,42 @@
   background-color: #EE5D5B;
   color: white;
   padding: 2px;
-  font-size: 12px;
   line-height: 18px;
   white-space: nowrap;
   MozUserSelect: none;
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #EE5D5B; }
+  font-size: 12px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%; }
   .range-overlay:hover {
-    background-color: #6BADCA;
-    cursor: pointer; }
+    background-color: #6BADCA; }
   .range-overlay span {
     text-align: center; }
+
+.building-overlay {
+  position: absolute;
+  background-color: #EE5D5B;
+  color: white;
+  padding: 2px;
+  line-height: 18px;
+  white-space: nowrap;
+  MozUserSelect: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 18px; }
+  .building-overlay:hover {
+    background-color: #6BADCA; }
+  .building-overlay .arrow {
+    background: url(../images/label.png) no-repeat;
+    overflow: hidden;
+    background-position: 0 0;
+    width: 11px;
+    height: 10px; }
+  .building-overlay:hover .arrow {
+    background-position: 0px -20px; }

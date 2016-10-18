@@ -2,29 +2,42 @@
 =w-h($width,$height)
     width: $width
     height: $height
+// 覆盖物通用样式
+=auto-overlay
+    position: absolute
+    background-color: #EE5D5B
+    color: white
+    padding: 2px
+    line-height: 18px
+    white-space: nowrap
+    MozUserSelect: none
+    cursor: pointer
+    display: flex
+    justify-content: center
+    align-items: center
+    &:hover
+        background-color: #6BADCA
 .cont .inner .top ul li
     cursor: pointer
 .cont .inner .top ul li.on
     cursor: default
 // 范围覆盖物(1级与2级通用)
 .range-overlay
-    position: absolute
-    background-color: #EE5D5B
-    color: white
-    padding: 2px
+    +auto-overlay
     font-size: 12px
-    line-height: 18px
-    white-space: nowrap
-    MozUserSelect: none
     // 圆形覆盖物
     +w-h(70px,70px)
     border-radius: 50%
-    display: flex
-    justify-content: center
-    align-items: center
-    background-color: #EE5D5B
-    &:hover
-        background-color: #6BADCA
-        cursor: pointer
     span
         text-align: center
+// 建筑物覆盖物(3级使用)
+.building-overlay
+    +auto-overlay
+    height: 18px
+    .arrow
+        background: url(../images/label.png) no-repeat
+        overflow: hidden
+        background-position: 0 0
+        +w-h(11px,10px)
+    &:hover .arrow
+        background-position: 0px -20px
