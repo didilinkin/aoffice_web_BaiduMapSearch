@@ -42,6 +42,13 @@
   border-radius: 5px; }
   .building-overlay:hover {
     background-color: #6BADCA; }
+  .building-overlay .arrow {
+    background: url(../images/label.png) no-repeat;
+    font-size: 18px;
+    overflow: hidden;
+    background-position: 0 0;
+    width: 11px;
+    height: 10px; }
   .building-overlay span {
     font-size: 4px; }
   .building-overlay:hover .arrow {
@@ -50,7 +57,7 @@
 .BMap_bubble_content {
   position: relative;
   float: left;
-  width: 300px !important;
+  width: 390px !important;
   height: 275px !important;
   background-color: #FFF; }
   .BMap_bubble_content h2 {

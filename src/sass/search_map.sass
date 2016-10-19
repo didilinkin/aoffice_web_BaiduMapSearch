@@ -36,6 +36,12 @@
     padding: 4px 7px
     height: 18px
     border-radius: 5px
+    .arrow
+        background: url(../images/label.png) no-repeat
+        font-size: 18px
+        overflow: hidden
+        background-position: 0 0
+        +w-h(11px,10px)
     span
         font-size: 4px
     &:hover .arrow
@@ -44,7 +50,7 @@
 .BMap_bubble_content
     position: relative
     float: left
-    +w-h(300px !important,275px !important)
+    +w-h(390px !important,275px !important)
     background-color: #FFF
     h2
         height: 65px
@@ -112,4 +118,4 @@
         li.more
             text-align: center
 .BMap_shadow
-    display: none           
+    display: none
