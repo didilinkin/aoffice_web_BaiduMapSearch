@@ -1,73 +1,90 @@
-/*
- *调用——页面加载中按顺序做的内容
- */
-var map = new BMap.Map("mapbox", {enableMapClick:false});  // 创建Map实例(关闭底图可点功能)
-	map.centerAndZoom("青岛",11);      // 初始化地图,用城市名设置地图中心点
-// 添加 缩放 与 平移控件
-var top_left_control = new BMap.ScaleControl({anchor: BMAP_ANCHOR_TOP_LEFT});// 左上角，添加比例尺
-var top_left_navigation = new BMap.NavigationControl();  //左上角，添加默认缩放平移控件
-map.addControl(top_left_control);   // 添加比例尺
-map.addControl(top_left_navigation);    // 默认缩放平移控件
-map.enableScrollWheelZoom(true);
-// 地图缩放监听
-map.addEventListener("zoomend", function(){
-    var zoomLevel = this.getZoom(),     //　当前地图级别
-        centerPoint = this.getCenter(); //  当前中心点坐标
-    if ( zoomLevel>=14&&zoomLevel<15 ){
-		map.clearOverlays();    // 清理地图上面所有点
-		addRangeOverlay(businessCirclePoint,16);
-		// console.log("输出2级地图内容:商圈");		// 商圈自定义覆盖物
-    }else if ( zoomLevel>=15 ){
-        // console.log("输出3级地图内容:详细覆盖");
-    }else {
-		map.clearOverlays();    // 清理地图上面所有点
-		addRangeOverlay(RegionPoint,14);		// 输出行政区自定义覆盖物
-		// console.log("输出1级地图内容:行政区");
-    }
-});
-// 行政区＋商圈范围覆盖物——１.2级通用
-function rangeOverlay(point,text,code,url,regionName,zoom){
-    this._point = point;
-    this._text = text;
-    this._code = code;
-    this._url = url;
-	this._regionName = regionName;
-    this._zoom = zoom;
+var num = this._NO;
+this._map = map;
+var div = this._div = document.createElement("div"); // 父级元素
+	divChildOverlay = this._divChildOverlay = document.createElement("div"); // 第三级覆盖物div
+div.setAttribute("class","parentDiv");
+// 第三级覆盖物属性控制
+divChildOverlay.setAttribute("class","building-overlay");
+divChildOverlay.style.zIndex = BMap.Overlay.getZIndex(this._point.lat);
+divChildOverlay.onclick = function () {
+	var buildingOverlayObj = BuildingModel[num];
+	// 信息窗口实例　三级建筑物覆盖物点击弹出的DIV     <div class="pointdetail clearfix">
+	var buildingContent =
+		"<h2>" + buildingOverlayObj.name + " </h2>" +
+		"<p><a href=\"#\" target=\"_blank\"><img id=\"imgDemo\" src=\"" + buildingOverlayObj.picUrl + "\" width=\"420\" height=\"235\" alt=\"\"></a></p>" +
+		"<ul><li><a href=\"#\"><span>" + buildingOverlayObj.areaMin + "m2</span><span class=\"w110\">¥ " + buildingOverlayObj.dayBeginning + "元/天</span><span>" + buildingOverlayObj.decoration + "</span><img src=\"" + buildingOverlayObj.childPic + "\" width=\"56\" height=\"35\" alt=\"\"></a></li><li class=\"more\"><a href=\"#\">查看更多（" + buildingOverlayObj.areaMin + "~" + buildingOverlayObj.areaMax + "㎡）</a></li></ul>" +
+		"</div>";
+	var infoWindow = new BMap.InfoWindow(buildingContent);  // 创建信息窗口对象
+	var point = new BMap.Point(buildingOverlayObj.latitude,buildingOverlayObj.longitude + 0.001);
+	// this.openInfoWindow(infoWindow);  无法实现在覆盖物对象上面弹出,只能靠坐标弹出
+	map.openInfoWindow(infoWindow,point); //开启信息窗口
 }
-rangeOverlay.prototype = new BMap.Overlay();
-rangeOverlay.prototype.initialize = function(map){
-    this._map = map;
-    var div = this._div = document.createElement("div");
-    div.setAttribute("id",this._code);
-    div.setAttribute("class","'range-overlay' + ");
-	div.setAttribute("data-regionName",this._regionName);
-    div.style.zIndex = BMap.Overlay.getZIndex(this._point.lat);
-    // 保存code
-    var code = this._code,   //　区域代码
-        url = this._url,
-        point = this._point,
-        zoom = this._zoom;
-    div.onclick = function circlePoint(){
-        // Ajax上传code，并改变中心点
-        map.setZoom(zoom);      // 根据坐标点进行跳转,改变层级
-		// map.setViewport(points); // 将目标点集合集中展示
-    }
-    var span = this._span = document.createElement("span");
-    div.appendChild(span);
-    div.getElementsByTagName("span")[0].innerHTML =  this._text;
-    div.onmouseover = function(){
-        this.style.zIndex = "9";
-    }
-    div.onmouseout = function(){
-        this.style.zIndex = "1";
-    }
-    map.getPanes().labelPane.appendChild(div);
-    return div;
+// // 保存code
+// var code = this.code
+divChildOverlay.style.fontSize = "12px"
+var span = divChildOverlay._span = document.createElement("span");
+divChildOverlay.appendChild(span);
+span.appendChild(document.createTextNode(this._text));
+// var that = this.divChildOverlay;
+// var arrow = this._arrow = document.createElement("div");
+//     arrow.setAttribute("class","arrow");
+//     arrow.style.position = "absolute";
+//     arrow.style.top = "22px";
+//     arrow.style.left = "10px";
+// div.appendChild(arrow);
+divChildOverlay.onmouseover = function(){
+	this.getElementsByTagName("span")[0].innerHTML = that._mouseoverTxt;
 }
-rangeOverlay.prototype.draw = function(){
-    var map = this._map;
-    var pixel = map.pointToOverlayPixel(this._point);
-    // this._div.style.left = pixel.x - parseInt(this._arrow.style.left) + "px";
-    this._div.style.left = pixel.x - 30 + "px";
-    this._div.style.top  = pixel.y - 30 + "px";
+divChildOverlay.onmouseout = function(){
+	this.getElementsByTagName("span")[0].innerHTML = that._text;
 }
+map.getPanes().labelPane.appendChild(divChildOverlay);
+return div;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+this._map = map;
+var div = this._div = document.createElement("div");
+div.setAttribute("class","building-overlay");
+div.style.zIndex = BMap.Overlay.getZIndex(this._point.lat);
+div.setAttribute("onclick","buildingOverlayClick(" +  this._NO　+ ")");
+// // 保存code
+// var code = this.code
+// div.onclick = function(){
+//     console.log(code);　　// 成功打印code
+// }
+div.style.fontSize = "12px"
+var span = this._span = document.createElement("span");
+div.appendChild(span);
+span.appendChild(document.createTextNode(this._text));
+var that = this;
+// var arrow = this._arrow = document.createElement("div");
+//     arrow.setAttribute("class","arrow");
+//     arrow.style.position = "absolute";
+//     arrow.style.top = "22px";
+//     arrow.style.left = "10px";
+// div.appendChild(arrow);
+div.onmouseover = function(){
+    this.getElementsByTagName("span")[0].innerHTML = that._mouseoverTxt;
+}
+div.onmouseout = function(){
+    this.getElementsByTagName("span")[0].innerHTML = that._text;
+}
+map.getPanes().labelPane.appendChild(div);
+return div;

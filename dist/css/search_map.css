@@ -126,3 +126,23 @@
 
 .BMap_shadow {
   display: none; }
+
+.parent {
+  position: absolute;
+  background-color: #EE5D5B;
+  color: white;
+  padding: 2px;
+  line-height: 18px;
+  white-space: nowrap;
+  MozUserSelect: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px 7px;
+  height: 18px;
+  border-radius: 5px; }
+  .parent:hover {
+    background-color: #6BADCA; }
+  .parent span {
+    font-size: 4px; }
