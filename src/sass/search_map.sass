@@ -33,27 +33,19 @@
 // 建筑物覆盖物(3级使用)
 .building-overlay
     +auto-overlay
-    padding: 5px 10px
+    padding: 4px 7px
     height: 18px
+    border-radius: 5px
     span
-        font-size: 18px
+        font-size: 4px
     &:hover .arrow
         background-position: 0px -20px
 // 弹出信息窗口
 .BMap_bubble_content
     position: relative
     float: left
-    +w-h(420px,auto)
-    // margin: 0 0 20px 20px
+    +w-h(300px !important,275px !important)
     background-color: #FFF
-    &:before
-        position: absolute
-        content: ''
-        left: 204px
-        bottom: -24px
-        +w-h(0,0)
-        border: transparent 12px solid
-            top: 12px solid #FFF
     h2
         height: 65px
         // padding: 0 30px
@@ -119,3 +111,5 @@
                 border: none
         li.more
             text-align: center
+.BMap_shadow
+    display: none           

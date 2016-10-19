@@ -37,30 +37,22 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 5px 10px;
-  height: 18px; }
+  padding: 4px 7px;
+  height: 18px;
+  border-radius: 5px; }
   .building-overlay:hover {
     background-color: #6BADCA; }
   .building-overlay span {
-    font-size: 18px; }
+    font-size: 4px; }
   .building-overlay:hover .arrow {
     background-position: 0px -20px; }
 
 .BMap_bubble_content {
   position: relative;
   float: left;
-  width: 420px;
-  height: auto;
+  width: 300px !important;
+  height: 275px !important;
   background-color: #FFF; }
-  .BMap_bubble_content:before {
-    position: absolute;
-    content: '';
-    left: 204px;
-    bottom: -24px;
-    width: 0;
-    height: 0;
-    border: transparent 12px solid;
-      border-top: 12px solid #FFF; }
   .BMap_bubble_content h2 {
     height: 65px;
     margin: 0;
@@ -124,3 +116,6 @@
         border: none; }
     .BMap_bubble_content ul li.more {
       text-align: center; }
+
+.BMap_shadow {
+  display: none; }
