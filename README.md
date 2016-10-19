@@ -18,5 +18,29 @@
 4. 调用中　判断2级希望改成=14,而不是区间,暂时无法实现(滚轮回滚缩小层级时无法退回1级)
 
 ***
-# 等待修改问题
+# 未处理
 - [ ] 替换building对象url值
+***
+
+
+
+
+```seq
+Alice->Bob: Hello Bob, how are you?
+Note right of Bob: Bob thinks
+Bob-->Alice: I am good thanks!
+```
+```seq
+a -> b
+a <- b
+```
+
+```flow
+st=>start: Start
+op=>operation: Your Operation
+cond=>condition: Yes or No?
+e=>end
+st->op->cond
+cond(yes)->e
+cond(no)->op
+```
