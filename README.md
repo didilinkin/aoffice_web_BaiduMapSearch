@@ -21,26 +21,3 @@
 # 未处理
 - [ ] 替换building对象url值
 ***
-
-
-
-
-```seq
-Alice->Bob: Hello Bob, how are you?
-Note right of Bob: Bob thinks
-Bob-->Alice: I am good thanks!
-```
-```seq
-a -> b
-a <- b
-```
-
-```flow
-st=>start: Start
-op=>operation: Your Operation
-cond=>condition: Yes or No?
-e=>end
-st->op->cond
-cond(yes)->e
-cond(no)->op
-```
