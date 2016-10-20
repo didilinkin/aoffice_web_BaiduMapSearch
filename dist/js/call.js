@@ -91,18 +91,37 @@ buildingOverlay.prototype.initialize = function(map){
 
 
 
-    var num = this._NO;
+    var num = this._NO,
+        buildingText = this._text;
     this._map = map;
     var div = this._div = document.createElement("div"); // 父级元素
     var childOverlay = document.createElement("div"); // 第三级覆盖物div
-        div.setAttribute("class","parent");
+
+        div.setAttribute("class","building-parent");
         div.style.zIndex = BMap.Overlay.getZIndex(this._point.lat);
         div.style.fontSize = "12px"
 
+        childOverlay.setAttribute("class","building-overlay");
+        childOverlay.setAttribute("id",this._NO);
+        childOverlay.onclick = function(){
+
+            var childInfoWindow = document.createElement("div");
+            childInfoWindow.id = "building-infoWindow-" + num;
+            childInfoWindow.className = "building-infoWindow";
+
+            var text=document.createTextNode(buildingText);
+            childInfoWindow.appendChild(text);
+            childOverlay.parentNode.insertBefore(childInfoWindow,childOverlay);
+            // 获取所有信息窗口
+            var allInfoWindow = document.getElementsByClassName("building-infoWindow");
+
+
+        };
+        div.appendChild(childOverlay);
 
     var span = this._span = document.createElement("span");
-        div.appendChild(span);
         span.appendChild(document.createTextNode(this._text));
+        childOverlay.appendChild(span);
 
     var that = this;
 

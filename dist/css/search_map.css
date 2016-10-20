@@ -25,35 +25,6 @@
   .range-overlay span {
     text-align: center; }
 
-.building-overlay {
-  position: absolute;
-  background-color: #EE5D5B;
-  color: white;
-  padding: 2px;
-  line-height: 18px;
-  white-space: nowrap;
-  MozUserSelect: none;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 4px 7px;
-  height: 18px;
-  border-radius: 5px; }
-  .building-overlay:hover {
-    background-color: #6BADCA; }
-  .building-overlay .arrow {
-    background: url(../images/label.png) no-repeat;
-    font-size: 18px;
-    overflow: hidden;
-    background-position: 0 0;
-    width: 11px;
-    height: 10px; }
-  .building-overlay span {
-    font-size: 4px; }
-  .building-overlay:hover .arrow {
-    background-position: 0px -20px; }
-
 .BMap_bubble_content {
   position: relative;
   float: left;
@@ -127,22 +98,48 @@
 .BMap_shadow {
   display: none; }
 
-.parent {
+.building-parent {
   position: absolute;
-  background-color: #EE5D5B;
-  color: white;
-  padding: 2px;
   line-height: 18px;
   white-space: nowrap;
   MozUserSelect: none;
   cursor: pointer;
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding: 4px 7px;
-  height: 18px;
-  border-radius: 5px; }
-  .parent:hover {
-    background-color: #6BADCA; }
-  .parent span {
+  align-items: center; }
+  .building-parent span {
     font-size: 4px; }
+  .building-parent .building-infoWindow {
+    position: absolute;
+    top: -320px;
+    width: 300px;
+    height: 300px;
+    background-color: red; }
+  .building-parent .building-overlay {
+    position: absolute;
+    background-color: #EE5D5B;
+    color: white;
+    padding: 2px;
+    line-height: 18px;
+    white-space: nowrap;
+    MozUserSelect: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 7px;
+    height: 18px;
+    border-radius: 5px; }
+    .building-parent .building-overlay:hover {
+      background-color: #6BADCA; }
+    .building-parent .building-overlay .arrow {
+      background: url(../images/label.png) no-repeat;
+      font-size: 18px;
+      overflow: hidden;
+      background-position: 0 0;
+      width: 11px;
+      height: 10px; }
+    .building-parent .building-overlay span {
+      font-size: 4px; }
+    .building-parent .building-overlay:hover .arrow {
+      background-position: 0px -20px; }

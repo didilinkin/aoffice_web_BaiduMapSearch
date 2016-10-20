@@ -30,22 +30,6 @@
     border-radius: 50%
     span
         text-align: center
-// 建筑物覆盖物(3级使用)
-.building-overlay
-    +auto-overlay
-    padding: 4px 7px
-    height: 18px
-    border-radius: 5px
-    .arrow
-        background: url(../images/label.png) no-repeat
-        font-size: 18px
-        overflow: hidden
-        background-position: 0 0
-        +w-h(11px,10px)
-    span
-        font-size: 4px
-    &:hover .arrow
-        background-position: 0px -20px
 // 弹出信息窗口
 .BMap_bubble_content
     position: relative
@@ -121,10 +105,36 @@
 .BMap_shadow
     display: none
 //　3级覆盖物添加父级元素
-.parent
-    +auto-overlay
-    padding: 4px 7px
-    height: 18px
-    border-radius: 5px
+.building-parent
+    position: absolute
+    line-height: 18px
+    white-space: nowrap
+    MozUserSelect: none
+    cursor: pointer
+    display: flex
+    justify-content: center
+    align-items: center
     span
         font-size: 4px
+    // 建筑物　信息窗口(3级使用)
+    .building-infoWindow
+        position: absolute
+        top: -320px
+        +w-h(300px,300px)
+        background-color: red
+    // 建筑物覆盖物(3级使用)
+    .building-overlay
+        +auto-overlay
+        padding: 4px 7px
+        height: 18px
+        border-radius: 5px
+        .arrow
+            background: url(../images/label.png) no-repeat
+            font-size: 18px
+            overflow: hidden
+            background-position: 0 0
+            +w-h(11px,10px)
+        span
+            font-size: 4px
+        &:hover .arrow
+            background-position: 0px -20px
