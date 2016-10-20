@@ -84,66 +84,57 @@ function buildingOverlay(point,text,mouseoverTxt,code,NO,zoom){
 }
 buildingOverlay.prototype = new BMap.Overlay();
 buildingOverlay.prototype.initialize = function(map){
-
-
-
-
-
-
-
     var num = this._NO,
         buildingText = this._text;
     this._map = map;
     var div = this._div = document.createElement("div"); // 父级元素
     var childOverlay = document.createElement("div"); // 第三级覆盖物div
-
         div.setAttribute("class","building-parent");
         div.style.zIndex = BMap.Overlay.getZIndex(this._point.lat);
         div.style.fontSize = "12px"
-
         childOverlay.setAttribute("class","building-overlay");
         childOverlay.setAttribute("id",this._NO);
         childOverlay.onclick = function(){
-
             var childInfoWindow = document.createElement("div");
             childInfoWindow.id = "building-infoWindow-" + num;
             childInfoWindow.className = "building-infoWindow";
-
-            var text=document.createTextNode(buildingText);
-            childInfoWindow.appendChild(text);
+            var buildingOverlayObj = BuildingModel[num];
+            // 拼接字符串内容
+            var childInfoWindow_Content =
+                "<h2>" +
+                    "<span class=\"price\">" +
+                        "<img src=\"images/cross1.png\">" +
+                    "</span>" +
+                    buildingOverlayObj.name +
+                "</h2>" +
+                "<p><a href=\"" + buildingOverlayObj.code + "\" target=\"_blank\">" +
+                    "<img src=\"" + buildingOverlayObj.picUrl + "\" alt=\"\">" +
+                "</a></p>" +
+                "<ul>" +
+                    "<li>" +
+                        "<a href=\"" + buildingOverlayObj.code + "\">" +
+                            "<span>" + buildingOverlayObj.areaMin + "㎡</span>" +
+                            "<span class=\"w110\">¥ " + buildingOverlayObj.dayBeginning + " 元/天</span>" +
+                            "<span>" + buildingOverlayObj.decoration + "</span>" +
+                            "<img src=\"" + buildingOverlayObj.childPic[0] + "\" alt=\"\">" +
+                        "</a>" +
+                    "</li>" +
+                    "<li class=\"more\"><a href=\"" + buildingOverlayObj.code + "\">查看更多（" + buildingOverlayObj.areaMin + "~" + buildingOverlayObj.areaMax + "㎡）</a></li>" +
+                "</ul>"
+            childInfoWindow.innerHTML =  childInfoWindow_Content;   // 信息窗口　加入内容结构；
             childOverlay.parentNode.insertBefore(childInfoWindow,childOverlay);
             // 获取所有信息窗口
             var allInfoWindow = document.getElementsByClassName("building-infoWindow");
-
-
         };
         div.appendChild(childOverlay);
-
     var span = this._span = document.createElement("span");
         span.appendChild(document.createTextNode(this._text));
         childOverlay.appendChild(span);
-
     var that = this;
-
-    div.onmouseover = function(){ this.getElementsByTagName("span")[0].innerHTML = that._mouseoverTxt; }
-    div.onmouseout = function(){ this.getElementsByTagName("span")[0].innerHTML = that._text; }
+    childOverlay.onmouseover = function(){ this.getElementsByTagName("span")[0].innerHTML = that._mouseoverTxt; }
+    childOverlay.onmouseout = function(){ this.getElementsByTagName("span")[0].innerHTML = that._text; }
     map.getPanes().labelPane.appendChild(div);
     return div;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
 buildingOverlay.prototype.draw = function(){
     var map = this._map;
