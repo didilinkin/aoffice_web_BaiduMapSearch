@@ -143,3 +143,5 @@
       border-radius: 5px; }
       .building-parent .building-overlay span:hover {
         background-color: #6BADCA; }
+    .building-parent .building-overlay:hover .arrow {
+      background-position: 0px -20px; }
