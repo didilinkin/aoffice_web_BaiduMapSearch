@@ -89,7 +89,7 @@
           font-size: 14px; }
           .building-parent .building-infoWindow ul li a span {
             display: block;
-            width: 70px;
+            width: 67px;
             height: 35px;
             line-height: 35px;
             float: left; }
@@ -112,26 +112,11 @@
       border: transparent 12px solid;
       border-top: 12px solid #FFF; }
   .building-parent .building-overlay {
-    position: absolute;
-    background-color: #EE5D5B;
-    color: #FFF;
-    padding: 2px;
-    line-height: 18px;
-    white-space: nowrap;
-    MozUserSelect: none;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 4px 7px;
-    height: 18px;
-    border-radius: 5px; }
-    .building-parent .building-overlay:hover {
-      background-color: #6BADCA; }
+    position: relative; }
     .building-parent .building-overlay .arrow {
-      position: absolute !important;
-      top: 22px !important;
-      left: 40% !important;
+      position: absolute;
+      top: 25px;
+      left: 20px;
       background: url(../images/label.png) no-repeat;
       font-size: 18px;
       overflow: hidden;
@@ -139,6 +124,22 @@
       width: 11px;
       height: 10px; }
     .building-parent .building-overlay span {
-      font-size: 14px; }
-    .building-parent .building-overlay:hover .arrow {
-      background-position: 0px -20px; }
+      position: absolute;
+      background-color: #EE5D5B;
+      color: #FFF;
+      padding: 2px;
+      line-height: 18px;
+      white-space: nowrap;
+      MozUserSelect: none;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top: -3px;
+      left: -25px;
+      height: 18px;
+      padding: 4px 7px;
+      font-size: 14px;
+      border-radius: 5px; }
+      .building-parent .building-overlay span:hover {
+        background-color: #6BADCA; }

@@ -50,6 +50,7 @@ $infoWindow_width: 330px
 //　3级覆盖物添加父级元素
 .building-parent
     position: absolute
+    // +w-h(auto,auto)
     +lh(18px)
     white-space: nowrap
     MozUserSelect: none
@@ -111,7 +112,7 @@ $infoWindow_width: 330px
                     +fs(14px)
                     span
                         +block
-                        +w-h(70px,35px)
+                        +w-h(67px,35px)
                         +lh(35px)
                         float: left
                     span.w110
@@ -132,20 +133,22 @@ $infoWindow_width: 330px
             border-top: 12px solid $colorF
     // 建筑物覆盖物(3级使用)
     .building-overlay
-        +auto-overlay
-        padding: 4px 7px
-        +h(18px)
-        border-radius: 5px
+        position: relative
         .arrow
-            position: absolute !important
-            top: 22px !important
-            left: 40% !important
+            position: absolute
+            top: 25px
+            left: 20px
             background: url(../images/label.png) no-repeat
             +fs(18px)
             overflow: hidden
             background-position: 0 0
             +w-h(11px,10px)
         span
+            +auto-overlay
+            top: -3px
+            left: -25px
+            +h(18px)
+            padding: 4px 7px
             +fs(14px)
+            border-radius: 5px
         &:hover .arrow
-            background-position: 0px -20px
