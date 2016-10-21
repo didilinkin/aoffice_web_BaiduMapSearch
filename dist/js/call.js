@@ -91,7 +91,6 @@ buildingOverlay.prototype.initialize = function(map){
     var childOverlay = document.createElement("div"); // 第三级覆盖物div
         div.setAttribute("class","building-parent");
         div.style.zIndex = BMap.Overlay.getZIndex(this._point.lat);
-        div.style.fontSize = "12px"
         childOverlay.setAttribute("class","building-overlay");
         childOverlay.setAttribute("id",this._NO);
         childOverlay.onclick = function(){
@@ -133,9 +132,6 @@ buildingOverlay.prototype.initialize = function(map){
     var that = this;
     var arrow = this._arrow = document.createElement("div");    // 箭头
         arrow.setAttribute("class","arrow");
-        arrow.style.position = "absolute";
-        arrow.style.top = "22px";
-        arrow.style.left = "40%";
     childOverlay.appendChild(arrow);
     childOverlay.onmouseover = function(){ this.getElementsByTagName("span")[0].innerHTML = that._mouseoverTxt; }
     childOverlay.onmouseout = function(){ this.getElementsByTagName("span")[0].innerHTML = that._text; }

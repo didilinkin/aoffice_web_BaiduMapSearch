@@ -129,6 +129,9 @@
     .building-parent .building-overlay:hover {
       background-color: #6BADCA; }
     .building-parent .building-overlay .arrow {
+      position: absolute !important;
+      top: 22px !important;
+      left: 40% !important;
       background: url(../images/label.png) no-repeat;
       font-size: 18px;
       overflow: hidden;
