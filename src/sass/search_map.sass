@@ -31,8 +31,8 @@ $infoWindow_width: 330px
     display: flex
     justify-content: center
     align-items: center
-    &:hover
-        +bcolor(#6BADCA)
+    // &:hover
+    //     +bcolor(#6BADCA)
 .cont .inner .top ul li
     cursor: pointer
 .cont .inner .top ul li.on
@@ -137,7 +137,7 @@ $infoWindow_width: 330px
         .arrow
             position: absolute
             top: 25px
-            left: 20px
+            // left: 45%
             background: url(../images/label.png) no-repeat
             +fs(18px)
             overflow: hidden
@@ -145,11 +145,14 @@ $infoWindow_width: 330px
             +w-h(11px,10px)
         span
             +auto-overlay
-            top: -3px
-            left: -25px
-            +h(18px)
+            // position: relative
+            // top: -3px
+            // left: -25px
             padding: 4px 7px
             +fs(14px)
             border-radius: 5px
-        &:hover .arrow
-            background-position: 0px -20px
+        &:hover
+            span
+                +bcolor(#6BADCA)
+            .arrow
+                background-position: 0px -20px

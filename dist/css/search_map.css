@@ -20,8 +20,6 @@
   width: 70px;
   height: 70px;
   border-radius: 50%; }
-  .range-overlay:hover {
-    background-color: #6BADCA; }
   .range-overlay span {
     color: #FFF;
     text-align: center; }
@@ -116,7 +114,6 @@
     .building-parent .building-overlay .arrow {
       position: absolute;
       top: 25px;
-      left: 20px;
       background: url(../images/label.png) no-repeat;
       font-size: 18px;
       overflow: hidden;
@@ -135,13 +132,10 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      top: -3px;
-      left: -25px;
-      height: 18px;
       padding: 4px 7px;
       font-size: 14px;
       border-radius: 5px; }
-      .building-parent .building-overlay span:hover {
-        background-color: #6BADCA; }
+    .building-parent .building-overlay:hover span {
+      background-color: #6BADCA; }
     .building-parent .building-overlay:hover .arrow {
       background-position: 0px -20px; }

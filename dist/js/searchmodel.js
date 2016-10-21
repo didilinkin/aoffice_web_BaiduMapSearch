@@ -12,7 +12,7 @@ var BuildingModel = [
         areaMax: 230,                               // 资源最大面积
         dayBeginning: 15,                           // 价格按天起点
         monthBeginning: "",                         // 价格按月起点
-        priceBeginning: 10,                         // 价格起点
+        priceBeginning: 1,                         // 价格起点
         beginningUnit: "元",                          // 价格起点单位
         resourceAmount: 123,                         // 资源数量
         picUrl: "images/group-1.jpg",              // 图片url
@@ -54,7 +54,7 @@ var BuildingModel = [
         areaMax: 480,                               // 资源最大面积
         dayBeginning: 17,                           // 价格按天起点
         monthBeginning: "",                         // 价格按月起点
-        priceBeginning: 13,                         // 价格起点
+        priceBeginning: 111111,                         // 价格起点
         beginningUnit: "元",                          // 价格起点单位
         resourceAmount: 125,                         // 资源数量
         picUrl: "images/group-1.jpg",              // 图片url

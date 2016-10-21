@@ -128,13 +128,39 @@ buildingOverlay.prototype.initialize = function(map){
         div.appendChild(childOverlay);
     var span = this._span = document.createElement("span");
         span.appendChild(document.createTextNode(this._text));
+        span.setAttribute("id","building-overlay__span")
         childOverlay.appendChild(span);
+        console.log(span.offsetWidth);
     var that = this;
     var arrow = this._arrow = document.createElement("div");    // 箭头
         arrow.setAttribute("class","arrow");
     childOverlay.appendChild(arrow);
     childOverlay.onmouseover = function(){ this.getElementsByTagName("span")[0].innerHTML = that._mouseoverTxt; }
     childOverlay.onmouseout = function(){ this.getElementsByTagName("span")[0].innerHTML = that._text; }
+    // console.log(document.getElementById("building-overlay__span").offsetWidth);
+    // 控制箭头位移
+    var spanArr = document.getElementsByClassName("building-overlay__span");
+        for (var i = 0; i < spanArr.length; i++) {
+            // var spanWidth = spanArr[i].offsetWidth;
+            var spanWidth = spanArr[i].offsetWidth;
+            // console.log(spanWidth);
+            // var ns=s.nextSbiling;\
+            function siblings(elem) {
+                var a = [];
+                var b = elem.parentNode.children;
+                for(var i =0;i< b.length;i++) {
+                    if(b[i] !== elem) a.push(b[i]);
+                }
+                return a;
+            }
+            var buildingArrow = siblings(spanArr[i]);
+            // 设置兄弟对象的left值
+            // var c = aaa + "!important";
+            spanWidthLeft = spanWidth/2 + "px !important";  // 将span的宽度除以二
+            // 设置样式
+
+            console.log(spanWidth);
+        }
     map.getPanes().labelPane.appendChild(div);
     return div;
 }
