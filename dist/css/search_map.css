@@ -49,7 +49,7 @@
       height: 65px;
       line-height: 65px;
       margin: 0;
-      padding: 0 30px;
+      padding: 0 15px;
       font-size: 16px;
       font-weight: 400;
       color: #555;
@@ -60,14 +60,15 @@
         padding-top: 24px;
         cursor: pointer; }
     .building-parent .building-infoWindow p {
+      width: 300px;
       height: 235px;
-      margin: 0;
-      padding: 0; }
+      padding: 0 15px;
+      margin: 0; }
       .building-parent .building-infoWindow p a {
         display: block;
         height: 235px; }
         .building-parent .building-infoWindow p a img {
-          width: 330px;
+          width: 300px;
           height: 235px; }
     .building-parent .building-infoWindow ul {
       display: block;

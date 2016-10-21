@@ -131,6 +131,12 @@ buildingOverlay.prototype.initialize = function(map){
         span.appendChild(document.createTextNode(this._text));
         childOverlay.appendChild(span);
     var that = this;
+    var arrow = this._arrow = document.createElement("div");    // 箭头
+        arrow.setAttribute("class","arrow");
+        arrow.style.position = "absolute";
+        arrow.style.top = "22px";
+        arrow.style.left = "40%";
+    childOverlay.appendChild(arrow);
     childOverlay.onmouseover = function(){ this.getElementsByTagName("span")[0].innerHTML = that._mouseoverTxt; }
     childOverlay.onmouseout = function(){ this.getElementsByTagName("span")[0].innerHTML = that._text; }
     map.getPanes().labelPane.appendChild(div);

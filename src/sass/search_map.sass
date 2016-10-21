@@ -71,7 +71,7 @@ $infoWindow_width: 330px
             +h(65px)
             +lh(65px)
             margin: 0
-            padding: 0 30px
+            padding: 0 15px
             font:
                 size: 16px
                 weight: 400
@@ -84,14 +84,15 @@ $infoWindow_width: 330px
                 padding-top: 24px
                 cursor: pointer
         p
-            +h(235px)
+            // +h(235px)
+            +w-h(300px,235px)
+            padding: 0 15px
             margin: 0
-            padding: 0
             a
                 +block
                 +h(235px)
                 img
-                    +w-h($infoWindow_width,235px)
+                    +w-h($infoWindow_width - (15px * 2),235px)
         ul
             +block
             +w-h(300px !important,auto !important)
