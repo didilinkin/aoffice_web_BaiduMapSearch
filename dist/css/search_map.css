@@ -37,7 +37,8 @@
     font-size: 14px; }
   .building-parent .building-infoWindow {
     position: absolute;
-    top: -460px !important;
+    top: -450px !important;
+    left: -150px;
     width: 330px !important;
     height: auto !important;
     background-color: #FFF;
@@ -84,7 +85,8 @@
           display: block;
           height: 35px;
           color: #B2B2B2;
-          font-size: 14px; }
+          font-size: 14px;
+          cursor: default; }
           .building-parent .building-infoWindow ul li a span {
             display: block;
             width: 67px;
@@ -100,6 +102,11 @@
         border: none; }
       .building-parent .building-infoWindow ul li.more {
         text-align: center; }
+        .building-parent .building-infoWindow ul li.more a {
+          display: inline-block;
+          cursor: pointer; }
+          .building-parent .building-infoWindow ul li.more a:hover {
+            color: #626262; }
     .building-parent .building-infoWindow:before {
       position: absolute;
       content: '';
@@ -132,6 +139,9 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      position: relative;
+      top: 0;
+      left: -10px;
       padding: 4px 7px;
       font-size: 14px;
       border-radius: 5px; }
