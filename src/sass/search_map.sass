@@ -63,15 +63,16 @@ $infoWindow_width: 330px
     // 建筑物　信息窗口(3级使用)
     .building-infoWindow
         position: absolute
-        top: -450px !important
+        // top: -450px !important
+        bottom: 50px
         left: -150px
         +w-h($infoWindow_width !important,auto !important)
         +bcolor($colorF)
         border-radius: 5px
         box-shadow: 5px 5px 5px rgba(0,0,0,.1)
         h2
-            +h(65px)
-            +lh(65px)
+            +h(50px)
+            +lh(55px)
             margin: 0
             padding: 0 15px
             font:
@@ -83,7 +84,7 @@ $infoWindow_width: 330px
             span.price
                 float: right
                 +lh(14px)
-                padding-top: 24px
+                padding-top: 20px
                 cursor: pointer
         p
             // +h(235px)
@@ -99,11 +100,11 @@ $infoWindow_width: 330px
             +block
             +w-h(300px !important,auto !important)
             +bcolor($colorF)
-            padding: 18px 15px 0 15px
+            padding: 0 15px 0 15px
             li
                 +h(35px)
                 +lh(35px)
-                padding: 10px 0
+                padding: 8px 0
                 +c(#B2B2B2)
                 border-bottom: 1px #DFDFDF solid
                 a

@@ -2,7 +2,7 @@
  *调用——页面加载中按顺序做的内容
  */
 var map = new BMap.Map("mapbox", {enableMapClick:false});  // 创建Map实例(关闭底图可点功能)
-        map.centerAndZoom("青岛",12);      // 初始化地图,用城市名设置地图中心点
+    map.centerAndZoom("青岛",12);      // 初始化地图,用城市名设置地图中心点
 // 添加 缩放 与 平移控件
 var top_left_control = new BMap.ScaleControl({anchor: BMAP_ANCHOR_TOP_LEFT});// 左上角，添加比例尺
 var top_left_navigation = new BMap.NavigationControl();  //左上角，添加默认缩放平移控件
@@ -137,30 +137,6 @@ buildingOverlay.prototype.initialize = function(map){
         childOverlay.appendChild(arrow);
     childOverlay.onmouseover = function(){ this.getElementsByTagName("span")[0].innerHTML = that._mouseoverTxt; }
     childOverlay.onmouseout = function(){ this.getElementsByTagName("span")[0].innerHTML = that._text; }
-    // console.log(document.getElementById("building-overlay__span").offsetWidth);
-    // 控制箭头位移
-    // var spanArr = document.getElementsByClassName("building-overlay__span");
-    //     for (var i = 0; i < spanArr.length; i++) {
-    //         // var spanWidth = spanArr[i].offsetWidth;
-    //         var spanWidth = spanArr[i].offsetWidth;
-    //         function siblings(elem) {
-    //             var a = [];
-    //             var b = elem.parentNode.children;
-    //             for(var i =0;i< b.length;i++) {
-    //                 if(b[i] !== elem) a.push(b[i]);
-    //             }
-    //             return a;
-    //         }
-    //         var buildingArrow = siblings(spanArr[i]);
-    //         // 设置兄弟对象的left值
-    //         // var c = aaa + "!important";
-    //         spanWidthLeft = spanWidth/2 + "px !important";  // 将span的宽度除以二
-    //         // buildingArrow.offsetsetLeft　= spanWidthLeft;
-    //         // buildingArrow.setAttribute("id",spanWidthLeft);
-    //         // 设置样式
-    //         buildingArrow.setAttribute("data",spanWidthLeft);
-    //         // console.log(buildingArrow);
-    //     }
     map.getPanes().labelPane.appendChild(div);
     return div;
 }

@@ -37,7 +37,7 @@
     font-size: 14px; }
   .building-parent .building-infoWindow {
     position: absolute;
-    top: -450px !important;
+    bottom: 50px;
     left: -150px;
     width: 330px !important;
     height: auto !important;
@@ -45,8 +45,8 @@
     border-radius: 5px;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1); }
     .building-parent .building-infoWindow h2 {
-      height: 65px;
-      line-height: 65px;
+      height: 50px;
+      line-height: 55px;
       margin: 0;
       padding: 0 15px;
       font-size: 16px;
@@ -56,7 +56,7 @@
       .building-parent .building-infoWindow h2 span.price {
         float: right;
         line-height: 14px;
-        padding-top: 24px;
+        padding-top: 20px;
         cursor: pointer; }
     .building-parent .building-infoWindow p {
       width: 300px;
@@ -74,11 +74,11 @@
       width: 300px !important;
       height: auto !important;
       background-color: #FFF;
-      padding: 18px 15px 0 15px; }
+      padding: 0 15px 0 15px; }
       .building-parent .building-infoWindow ul li {
         height: 35px;
         line-height: 35px;
-        padding: 10px 0;
+        padding: 8px 0;
         color: #B2B2B2;
         border-bottom: 1px #DFDFDF solid; }
         .building-parent .building-infoWindow ul li a {
