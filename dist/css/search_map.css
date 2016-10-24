@@ -150,3 +150,6 @@
       background-color: #6BADCA; }
     .building-parent .building-overlay:hover .arrow {
       background-position: 0px -20px; }
+
+.BMap_shadow, .BMap_pop {
+  visibility: hidden; }
