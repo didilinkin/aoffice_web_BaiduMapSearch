@@ -46,7 +46,7 @@ var BuildingModel = [
     },
     {
         code: "青岛",                               // 编码
-        name: "兴源大厦",                           // 楼盘名称
+        name: "兴源大厦111111111",                           // 楼盘名称
         region: "市南区",                             // 行政区
         businesscircle: "奥帆中心",                    // 商圈
         decoration: "简装",                              // 装修水平
