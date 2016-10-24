@@ -124,6 +124,34 @@ buildingOverlay.prototype.initialize = function(map){
             childOverlay.parentNode.insertBefore(childInfoWindow,childOverlay);
             // 获取所有信息窗口
             var allInfoWindow = document.getElementsByClassName("building-infoWindow");
+            // 测试添加百度infoWindow特效
+            // console.log(num); 可以获取到num
+
+
+
+            // var buildingOverlayObj = BuildingModel[num];
+            // console.log(buildingOverlayObj.longitude + 0.09);
+            // // 信息窗口实例　三级建筑物覆盖物点击弹出的DIV     <div class="pointdetail clearfix">
+            // var buildingContent =
+            //     "<h2>" + buildingOverlayObj.name + " </h2>" +
+            //     "<p><a href=\"#\" target=\"_blank\"><img id=\"imgDemo\" src=\"" + buildingOverlayObj.picUrl + "\" width=\"420\" height=\"235\" alt=\"\"></a></p>" +
+            //     "<ul><li><a href=\"#\"><span>" + buildingOverlayObj.areaMin + "m2</span><span class=\"w110\">¥ " + buildingOverlayObj.dayBeginning + "元/天</span><span>" + buildingOverlayObj.decoration + "</span><img src=\"" + buildingOverlayObj.childPic + "\" width=\"56\" height=\"35\" alt=\"\"></a></li><li class=\"more\"><a href=\"#\">查看更多（" + buildingOverlayObj.areaMin + "~" + buildingOverlayObj.areaMax + "㎡）</a></li></ul>" +
+            //     "</div>";
+            // var infoWindow = new BMap.InfoWindow(buildingContent);  // 创建信息窗口对象
+            // var point = new BMap.Point(buildingOverlayObj.latitude,buildingOverlayObj.longitude + 0.001);
+            // // this.openInfoWindow(infoWindow);  无法实现在覆盖物对象上面弹出,只能靠坐标弹出
+            // map.openInfoWindow(infoWindow,point); //开启信息窗口
+
+            //　获取childInfoWindow_Content信息窗口的高度
+            var buildingOverlayObj = BuildingModel[num];
+            var childInfoWindow_Content_height = document.getElementById("building-infoWindow-" + num).offsetHeight; // 可以获取到自定义信息窗口的高度
+            // console.log(childInfoWindow_Content_height);
+            var buildingContent_Baidu =
+                "<div id = building-infoWindow-baiduAPI-" + num + "; " + "style = height:" + childInfoWindow_Content_height + "px;" + ">" + "aaa"  + " </div>" +
+                "</div>";
+            var infoWindow = new BMap.InfoWindow(buildingContent_Baidu);  // 创建信息窗口对象
+            var point = new BMap.Point(buildingOverlayObj.latitude,buildingOverlayObj.longitude + 0.001);
+            map.openInfoWindow(infoWindow,point); //开启信息窗口
         };
         div.appendChild(childOverlay);
     var span = this._span = document.createElement("span");
