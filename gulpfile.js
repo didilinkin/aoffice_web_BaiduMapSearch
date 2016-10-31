@@ -34,7 +34,7 @@ gulp.task('css', function () {
 gulp.task('sass', function () {
 	return gulp.src('./src/sass/*.sass')
 		// 输出格式 + 错误输出
-		.pipe(sass({outputStyle: 'nested'}).on('error', sass.logError))
+		.pipe(sass({outputStyle: 'compact'}).on('error', sass.logError))
 		// 输出位置(先输出原生css任务,然后输出sass编译)
 		.pipe(gulp.dest('./dist/css'))
 		// 添加LiveReload插件

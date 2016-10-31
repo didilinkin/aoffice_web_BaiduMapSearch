@@ -274,7 +274,7 @@ user-select:none;
 
 
 /*企业服务内部页面css*/
-.service .main{ width:1180px; height:auto; padding:20px 10px 0; margin:0 auto;} 
+.service .main{ width:1180px; height:auto; padding:20px 10px 0; margin:0 auto;}
 .service .main .tab-title{ width:1180px; height:40px; padding-bottom:20px; text-align:center;}
 .service .main .tab-title ul{ width:100%; height:40px; font-size:0px;}
 .service .main .tab-title ul li{ display:block; float:left; width:104px; height:40px; line-height:40px; color:#fff; border-radius:4px; margin-right:20px; padding:0px; background:#ccc; font-weight:700; font-size:16px; cursor:pointer;}
@@ -437,29 +437,3 @@ user-select:none;
 .admin .inner .right-setting .tab-cont .tel ul li input.submit{ width:300px; height:30px; border-radius:4px; background:#ff2725; cursor:pointer; color:#fff; border:none;}
 .admin .inner .right-setting .tab-cont .tel ul li p{ position:absolute; width:280px; padding:0 10px; height:32px; left:407px; top:0; line-height:32px; font-size:14px; color:#ff2725;}
 .admin .inner .right-setting .tab-cont .tel ul li.res{ font-size:14px; color:#ff2725;}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -19,27 +19,24 @@ $infoWindow_width: 330px
 =bcolor($bcolor)
     background-color: $bcolor
 // 覆盖物通用样式
-=auto-overlay
-    position: absolute
+=auto-overlay($position,$paddingTop,$paddingRight)
+    position: $position
     +bcolor(#EE5D5B)
     +c($colorF)
-    padding: 2px
+    padding: $paddingTop $paddingRight
     +lh(18px)
     white-space: nowrap
-    MozUserSelect: none
     cursor: pointer
     display: flex
     justify-content: center
     align-items: center
-    // &:hover
-    //     +bcolor(#6BADCA)
 .cont .inner .top ul li
     cursor: pointer
 .cont .inner .top ul li.on
     cursor: default
 // 范围覆盖物(1级与2级通用)
 .range-overlay
-    +auto-overlay
+    +auto-overlay(absolute,2px,2px)
     +fs(12px)
     // 圆形覆盖物
     +w-h(70px,70px)
@@ -80,7 +77,6 @@ $infoWindow_width: 330px
                 weight: 400
             +c(#555)
             cursor: default
-            // span.star 星星样式不适用
             span.price
                 float: right
                 +lh(14px)
@@ -152,12 +148,10 @@ $infoWindow_width: 330px
             background-position: 0 0
             +w-h(11px,10px)
         span
-            +auto-overlay
-            position: relative
+            +auto-overlay(relative,4px,7px)
             top: 0
             left: -33px
             min-width: 70px
-            padding: 4px 7px
             +fs(14px)
             border-radius: 5px
         &:hover
